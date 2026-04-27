@@ -215,6 +215,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Expressões Regulares</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./poo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -360,14 +366,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="6.2" class="anchored" data-anchor-id="syntaxerror"><span class="header-section-number">6.2</span> Erros de sintaxe (<code>SyntaxError</code>)</h2>
 <p>O primeiro tipo de erro que você provavelmente irá encontrar ao programar em Python é o <strong>erro de sintaxe</strong>. Ele ocorre antes mesmo do programa começar a rodar: o Python tenta interpretar o código e encontra algo que não segue as regras da linguagem — como uma aspa faltando, um parêntese não fechado ou uma indentação incorreta.</p>
 <p>O exemplo clássico:</p>
-<div id="d83070d2" class="cell" data-execution_count="1">
+<div id="7fd2d6f4" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Olá, Mundo!)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[1], line 1</span>
-<span class="ansi-red-fg">    print("Olá, Mundo!)</span>
-                       ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> EOL while scanning string literal
+<pre>  <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[1]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-red-fg">    </span><span class="ansi-red-fg">print("Olá, Mundo!)</span>
+          ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> unterminated string literal (detected at line 1)
 </pre>
 </div>
 </div>
@@ -401,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="valueerror" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="valueerror"><span class="header-section-number">6.3.1</span> <code>ValueError</code></h3>
 <p>Um <code>ValueError</code> ocorre quando uma função recebe um argumento do tipo certo, mas com um <strong>valor inadequado</strong>. O caso mais comum é tentar converter algo que não é número em inteiro ou decimal:</p>
-<div id="806fec0e" class="cell" data-execution_count="2">
+<div id="71782222" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite um número: "</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"O número digitado foi </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -417,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="op">&lt;</span>TipoDeExcecao<span class="op">&gt;</span>:</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>o que fazer se a exceção ocorrer<span class="op">&gt;</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Por exemplo:</p>
-<div id="77784841" class="cell" data-execution_count="3">
+<div id="73fa3906" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite um número: "</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"O número digitado foi </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -441,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="o-problema-do-nameerror-com-tryexcept" class="level3" data-number="6.4.1">
 <h3 data-number="6.4.1" class="anchored" data-anchor-id="o-problema-do-nameerror-com-tryexcept"><span class="header-section-number">6.4.1</span> O problema do <code>NameError</code> com <code>try</code>/<code>except</code></h3>
 <p>Note que essa ainda não é a melhor forma de implementar esse código, pois estamos tentando executar duas linhas de código. Veja o que acontece se colocarmos o <code>print</code> fora do <code>try</code>:</p>
-<div id="632cb28e" class="cell" data-execution_count="4">
+<div id="dc5cfa90" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite um número: "</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
@@ -457,7 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="else" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="else"><span class="header-section-number">6.5</span> <code>else</code></h2>
 <p>O bloco <code>else</code> em uma estrutura <code>try</code>/<code>except</code> executa <strong>somente se nenhuma exceção ocorreu</strong>. Ele é o lugar certo para o código que depende do sucesso do <code>try</code>:</p>
-<div id="64089319" class="cell" data-execution_count="5">
+<div id="1b67f3e8" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite um número: "</span>))</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
@@ -471,7 +477,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="loop-de-validação-com-else" class="level3" data-number="6.5.1">
 <h3 data-number="6.5.1" class="anchored" data-anchor-id="loop-de-validação-com-else"><span class="header-section-number">6.5.1</span> Loop de validação com <code>else</code></h3>
 <p>Um padrão muito comum é combinar <code>while True</code> com <code>try</code>/<code>except</code>/<code>else</code> para continuar pedindo entrada até o usuário fornecer um valor válido:</p>
-<div id="6d6abc01" class="cell" data-execution_count="6">
+<div id="3f2af9a9" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite um número: "</span>))</span>
@@ -484,7 +490,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>O comando <code>while True</code> cria um laço que continuará pedindo a entrada do usuário indefinidamente, até que uma entrada válida seja fornecida.</p>
 <p>Quando o usuário digita um valor correto, o <code>break</code> interrompe o loop e o programa segue para a próxima etapa, exibindo o resultado. Dessa forma, se o usuário errar, ele recebe uma mensagem de orientação e tem novas chances de acertar, tornando a experiência mais amigável e robusta. Podemos melhorar o código da seguinte maneira:</p>
-<div id="da583c5c" class="cell" data-execution_count="7">
+<div id="b91aaffa" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite um número: "</span>))</span>
@@ -498,7 +504,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="utilizando-funções" class="level3" data-number="6.5.2">
 <h3 data-number="6.5.2" class="anchored" data-anchor-id="utilizando-funções"><span class="header-section-number">6.5.2</span> Utilizando funções</h3>
 <p>A combinação de <code>try</code>, <code>except</code>, <code>else</code> e <code>break</code> se torna especialmente poderosa quando encapsulada em funções reutilizáveis.</p>
-<div id="840904bc" class="cell" data-execution_count="8">
+<div id="5c666702" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> obter_inteiro()</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"O número digitado foi </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -517,7 +523,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Observe que, ao criar uma função para obter um número inteiro, tornamos o programa mais organizado e reutilizável. Agora, a lógica principal do programa se resume a poucas linhas, facilitando a leitura e a manutenção.</p>
 <p>Ainda assim, sempre é possível aprimorar o código. Que outras melhorias poderiam ser feitas para tornar essa função ainda mais robusta, flexível ou amigável para o usuário?</p>
-<div id="f6462b09" class="cell" data-execution_count="9">
+<div id="d3426d16" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> obter_inteiro()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"O número digitado foi </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -536,7 +542,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>main()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note que o comando <code>return</code> não apenas encerra o loop, mas também devolve o valor desejado para quem chamou a função. Algumas pessoas podem argumentar que seria possível obter o mesmo resultado de outras formas, como por exemplo:</p>
-<div id="7a8dec1b" class="cell" data-execution_count="10">
+<div id="249553a6" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> obter_inteiro()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"O número digitado foi </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -575,7 +581,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Use <code>pass</code> quando o erro é esperado e ignorá-lo é o comportamento correto (como pular entradas inválidas em uma lista). Prefira <code>except ... : print(...)</code> quando o erro é inesperado e o usuário precisa ser informado. Nunca use <code>pass</code> apenas para “silenciar” um erro que você não entendeu — isso esconde problemas reais.</p>
 </div>
 </div>
-<div id="e298b045" class="cell" data-execution_count="11">
+<div id="a43334da" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> obter_inteiro()</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"O número digitado foi </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -593,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Note que o código ainda funciona, mas não informa repetidamente ao usuário qual foi o erro cometido. Em algumas situações, é importante ser claro e mostrar ao usuário qual erro ocorreu; em outras, pode ser suficiente apenas pedir a entrada novamente, sem exibir mensagens.</p>
 <p>Uma última melhoria interessante para a função <code>obter_inteiro</code> é permitir que o texto do prompt seja personalizado. Assim, não dependemos de um texto fixo dentro da função e tornamos o código mais flexível e reutilizável. Modifique sua implementação para aceitar um parâmetro de prompt.</p>
-<div id="3b4ae08f" class="cell" data-execution_count="12">
+<div id="42a5d26c" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> obter_inteiro(<span class="st">"Digite um número: "</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"O número digitado foi </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -618,7 +624,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>textos (“n/d”, “-”)</li>
 <li>números com vírgula ou espaço</li>
 </ul>
-<div id="c11b001b" class="cell" data-execution_count="13">
+<div id="a57f949a" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Série do IPCA com valores mal formatados (dados "sujos")</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ipca_bruto <span class="op">=</span> [<span class="st">"4,62"</span>, <span class="st">"3,15"</span>, <span class="st">"."</span>, <span class="st">"5,79"</span>, <span class="st">"-"</span>, <span class="st">"4,31"</span>, <span class="st">""</span>, <span class="st">"3.72"</span>, <span class="st">"n/d"</span>, <span class="st">"6.50"</span>, <span class="st">"  4.83 "</span>]</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -647,7 +653,7 @@ IPCA médio (válidos): 4.70%</code></pre>
 <h2 data-number="6.7" class="anchored" data-anchor-id="raise"><span class="header-section-number">6.7</span> <code>raise</code> <a id="raise"></a></h2>
 <p>Em algumas situações, você pode querer interromper a execução do seu programa de forma controlada, lançando uma exceção quando uma condição indesejada ocorre. Para isso, usamos a palavra-chave <code>raise</code>.</p>
 <p>No exemplo a seguir, a função <code>calcular_raiz_quadrada()</code> lança uma exceção <code>ValueError</code> se o número fornecido for negativo, garantindo que apenas valores válidos sejam processados:</p>
-<div id="9fdfcc54" class="cell" data-execution_count="14">
+<div id="f66f5d4c" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_raiz_quadrada(numero):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> numero <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"O número deve ser positivo"</span>)</span>
@@ -658,7 +664,7 @@ IPCA médio (válidos): 4.70%</code></pre>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A raiz quadrada de </span><span class="sc">{</span>valor<span class="sc">}</span><span class="ss"> é </span><span class="sc">{</span>resultado<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Além de utilizar as exceções já existentes no Python, também podemos criar nossas próprias exceções personalizadas para lidar com situações específicas do nosso programa. Para isso, basta criar uma nova classe que herda de <code>Exception</code>. Assim, conseguimos definir mensagens e comportamentos sob medida para os nossos casos de uso, tornando o tratamento de erros ainda mais claro e organizado:</p>
-<div id="cf8e6476" class="cell" data-execution_count="15">
+<div id="4d1c8a58" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verificar_valor(valor):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> valor <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"O número não pode ser negativo!"</span>)</span>
@@ -676,7 +682,7 @@ IPCA médio (válidos): 4.70%</code></pre>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> TipoB:</span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>tratamento para TipoB<span class="op">&gt;</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>No exemplo a seguir, o bloco <code>try</code> tenta executar a divisão de dois números fornecidos pelo usuário. Se o usuário tentar dividir por zero, o except <code>ZeroDivisionError</code> captura essa exceção e exibe uma mensagem de erro. Além disso, se o usuário digitar algo que não seja um número, o except <code>ValueError</code> captura essa exceção e exibe uma mensagem de erro apropriada.</p>
-<div id="6274b221" class="cell" data-execution_count="16">
+<div id="39d71d4b" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite um número: "</span>))</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite outro número: "</span>))</span>
@@ -690,7 +696,7 @@ IPCA médio (válidos): 4.70%</code></pre>
 <p>Note que podemos capturar vários tipos ao mesmo tempo com uma tupla:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> (TipoA, TipoB):</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>tratamento comum para ambos<span class="op">&gt;</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="753b3974" class="cell" data-execution_count="17">
+<div id="853d2e57" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite um número: "</span>))</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Digite outro número: "</span>))</span>

@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./poo.html" rel="next">
 <link href="./excecoes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -213,6 +213,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./regex.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Expressões Regulares</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./poo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></span></a>
   </div>
 </li>
       </ul>
@@ -509,7 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="7.3" class="anchored" data-anchor-id="research"><span class="header-section-number">7.3</span> <code>re.search</code></h2>
 <p>A função <code>re.search</code> percorre toda a string em busca da primeira posição onde o padrão corresponde. Se encontrar uma correspondência, retorna um objeto <code>Match</code>; caso contrário, retorna <code>None</code>.</p>
 <p>Diferente de <code>re.findall</code>, que retorna todas as ocorrências, <code>re.search</code> interrompe a busca ao encontrar a primeira correspondência — sendo mais eficiente quando o objetivo é apenas verificar se o padrão existe na string.</p>
-<div id="fdd1674a" class="cell" data-execution_count="1">
+<div id="43f868ba" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"O IPCA de março foi de 0,83%"</span></span>
@@ -534,7 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>.groups()</code>: retorna todos os grupos como tupla</li>
 </ul>
 <p>Considere um exemplo simples: imagine que precisamos extrair o dia, o mês e o ano de um trecho de texto. Nesse caso, faz sentido usarmos grupos de captura para isolar cada uma dessas partes, permitindo acessá-las individualmente a partir do resultado da correspondência.</p>
-<div id="01617596" class="cell" data-execution_count="2">
+<div id="5536fd7a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"A reunião do Copom em 18/03/2025 definiu a nova taxa básica de juros."</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> re.search(<span class="vs">r"</span><span class="kw">(</span><span class="dv">\d</span><span class="op">{2}</span><span class="kw">)</span><span class="vs">/</span><span class="kw">(</span><span class="dv">\d</span><span class="op">{2}</span><span class="kw">)</span><span class="vs">/</span><span class="kw">(</span><span class="dv">\d</span><span class="op">{4}</span><span class="kw">)</span><span class="vs">"</span>, texto)</span>
@@ -556,7 +562,7 @@ Grupos: ('18', '03', '2025')</code></pre>
 <p>Outra forma de fazer isso é utilizando a sintaxe com <code>(?P&lt;nome&gt;...)</code>, que permite criar <strong>grupos nomeados</strong>.</p>
 <p>Grupos nomeados tornam o código mais legível e fácil de entender, pois você pode acessar cada parte pelo nome, em vez de depender da posição numérica.</p>
 <p>Vamos ver isso na prática usando o mesmo exemplo anterior.</p>
-<div id="3e6dcb21" class="cell" data-execution_count="3">
+<div id="591030be" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"A reunião do Copom em 18/03/2025 definiu a nova taxa básica de juros."</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> re.search(<span class="vs">r"</span><span class="kw">(</span><span class="fu">?P&lt;dia&gt;</span><span class="dv">\d</span><span class="op">{2}</span><span class="kw">)</span><span class="vs">/</span><span class="kw">(</span><span class="fu">?P&lt;mes&gt;</span><span class="dv">\d</span><span class="op">{2}</span><span class="kw">)</span><span class="vs">/</span><span class="kw">(</span><span class="fu">?P&lt;ano&gt;</span><span class="dv">\d</span><span class="op">{4}</span><span class="kw">)</span><span class="vs">"</span>, texto)</span>
@@ -587,14 +593,14 @@ Grupos: ('18', '03', '2025')</code></pre>
 </div>
 <div class="callout-body-container callout-body">
 <p>Permite atribuir o resultado de uma expressão a uma variável dentro de uma condição. É especialmente útil com <code>re.search</code>, pois evita repetir a chamada e o nome da variável:</p>
-<div id="a701c4b6" class="cell" data-execution_count="4">
+<div id="cc030c23" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> resultado <span class="op">:=</span> re.search(<span class="vs">r"</span><span class="dv">...</span><span class="vs">"</span>, texto):  <span class="co"># atribui e testa em uma linha</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(resultado.group())</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 <p>Cem o operador morsa (<code>:=</code>), o código anterior ficaria assim:</p>
-<div id="7c239165" class="cell" data-execution_count="5">
+<div id="3dc711e9" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"A reunião do Copom em 18/03/2025 definiu a nova taxa básica de juros."</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> resultado <span class="op">:=</span> re.search(<span class="vs">r"</span><span class="kw">(</span><span class="fu">?P&lt;dia&gt;</span><span class="dv">\d</span><span class="op">{2}</span><span class="kw">)</span><span class="vs">/</span><span class="kw">(</span><span class="fu">?P&lt;mes&gt;</span><span class="dv">\d</span><span class="op">{2}</span><span class="kw">)</span><span class="vs">/</span><span class="kw">(</span><span class="fu">?P&lt;ano&gt;</span><span class="dv">\d</span><span class="op">{4}</span><span class="kw">)</span><span class="vs">"</span>, texto):</span>
@@ -621,7 +627,7 @@ Grupos: ('18', '03', '2025')</code></pre>
 <section id="rematch" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="rematch"><span class="header-section-number">7.5</span> <code>re.match</code></h2>
 <p>A função <code>re.match</code> é semelhante a <code>re.search</code>, mas com uma diferença importante: ela só verifica se o padrão aparece no <strong>início da string</strong>. Na prática, isso equivale a usar <code>^</code> no começo do padrão com <code>re.search</code>.</p>
-<div id="177eccc5" class="cell" data-execution_count="6">
+<div id="27fd2bbb" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>codigo_ibge <span class="op">=</span> <span class="st">"Código IBGE: 3550308"</span> <span class="co"># código do município de São Paulo</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># search procura em qualquer posição da string</span></span>
@@ -662,7 +668,7 @@ Usando match: Código</code></pre>
 <p>Use grupos de captura quando quiser extrair partes específicas do texto. Isso torna o resultado do <code>re.findall</code> mais flexível e especialmente útil para análise e processamento de dados.</p>
 </div>
 </div>
-<div id="7bd54c52" class="cell" data-execution_count="7">
+<div id="ce5cf9ff" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="st">Segundo dados divulgados nesta quinta-feira, o IPCA registrou alta de 4,83</span><span class="sc">% e</span><span class="st">m 2025, enquanto o IGP-M ficou em 7,12%. Já o INPC teve variação de 4,61% no ano passado.</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
@@ -727,7 +733,7 @@ INPC: 4,61%</code></pre>
 </div>
 </div>
 <p>Além dos métodos <code>.group()</code>, <code>.groups()</code>, os objetos <code>Match</code> também possuem outros métodos úteis, como <code>.start()</code>, <code>.end()</code> e <code>.span()</code>.</p>
-<div id="44296fef" class="cell" data-execution_count="8">
+<div id="5c1ce5fe" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="st">Segundo dados divulgados nesta quinta-feira, o IPCA registrou alta de 4,83</span><span class="sc">% e</span><span class="st">m 2025, enquanto o IGP-M ficou em 7,12%. Já o INPC teve variação de 4,61% no ano passado.</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
@@ -784,7 +790,7 @@ Posição: (124, 151)
 <p>Use <code>re.split</code> para tratar textos “sujos” ou inconsistentes, em que os separadores não seguem um padrão fixo.</p>
 </div>
 </div>
-<div id="6d6a8c27" class="cell" data-execution_count="9">
+<div id="0450dd42" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .split() nativo: delimitador fixo</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"São Paulo/SP: 05508-010"</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Usando .split():"</span>, texto.split(<span class="st">":"</span>))</span>
@@ -821,7 +827,7 @@ Usando re.split(): ['Av. Professor Luciano Gualberto', '908', 'Butantã', 'São 
 <p><code>re.sub</code> é indispensável para limpeza e normalização de dados, como remover caracteres indesejados, padronizar formatos ou ajustar textos antes de análises.</p>
 </div>
 </div>
-<div id="7bccde20" class="cell" data-execution_count="10">
+<div id="1cb4c2f6" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Removendo formatação de valores monetários brasileiros</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> [<span class="st">"R$ 1.234,56"</span>, <span class="st">"R$9.800,00"</span>, <span class="st">"$ 12.345.678,90"</span>]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -884,7 +890,7 @@ Usando re.split(): ['Av. Professor Luciano Gualberto', '908', 'Butantã', 'São 
 <p>Você pode combinar várias flags usando o operador <code>|</code>, por exemplo: <code>flags=re.IGNORECASE | re.MULTILINE</code>.</p>
 </div>
 </div>
-<div id="27da3ac0" class="cell" data-execution_count="11">
+<div id="91752297" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"A decisão do Copom de iniciar o ciclo de flexibilização monetária com um corte de 0,25 ponto percentual, levando a taxa selic de 15,00% para 14,75% ao ano.</span><span class="ch">\n</span><span class="st">A expectativa do mercado é que a Taxa Selic termine o ano em 14%."</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.findall(<span class="vs">r"Selic"</span>, texto))</span>
@@ -894,7 +900,7 @@ Usando re.split(): ['Av. Professor Luciano Gualberto', '908', 'Butantã', 'São 
 ['selic', 'Selic']</code></pre>
 </div>
 </div>
-<div id="359262bd" class="cell" data-execution_count="12">
+<div id="6774f3ed" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="st">Aluno: Ana; Curso: Economia; Ingresso: 2023</span><span class="ch">\n</span><span class="st">aluno: Bruno; Curso: Administração; Ingresso: 2022</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
@@ -1365,8 +1371,8 @@ IGNORECASE + MULTILINE
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./poo.html" class="pagination-link" aria-label="Programação Orientada a Objetos">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -244,6 +244,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Expressões Regulares</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./poo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -334,7 +340,7 @@ window.Quarto = {
 <section id="definindo-uma-função" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="definindo-uma-função"><span class="header-section-number">5.1</span> Definindo uma função</h2>
 <p>Para definir uma função em Python, usamos a palavra-chave <code>def</code>, seguida do nome da função e dos parâmetros entre parênteses. Todo o bloco de código indentado abaixo do cabeçalho fará parte da função.</p>
-<div id="1fc786b9" class="cell" data-execution_count="1">
+<div id="3daf0c1d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nome_da_funcao(parametros):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>instruções<span class="op">&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    ...</span>
@@ -348,7 +354,7 @@ window.Quarto = {
 <li><strong><code>return</code></strong>: devolve um resultado para quem chamou a função (opcional).</li>
 </ul>
 <p>O exemplo mais simples é uma função sem parâmetros:</p>
-<div id="0876be2d" class="cell" data-execution_count="2">
+<div id="2cc490da" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saudacao():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Olá, seja bem-vindo(a)!"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -362,7 +368,7 @@ window.Quarto = {
 <section id="parâmetros" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="parâmetros"><span class="header-section-number">5.2</span> Parâmetros</h2>
 <p>Os <strong>parâmetros</strong> tornam as funções flexíveis: permitem que diferentes valores sejam processados sem alterar o código da função. O mesmo bloco pode ser reutilizado em várias partes do programa com diferentes entradas.</p>
-<div id="6bcca55e" class="cell" data-execution_count="3">
+<div id="e2d33d95" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saudacao(nome):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Olá, </span><span class="sc">{</span>nome<span class="sc">}</span><span class="ss">! Seja bem-vindo(a)!"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -377,7 +383,7 @@ Olá, Mariana! Seja bem-vindo(a)!</code></pre>
 <section id="valores-padrão" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="valores-padrão"><span class="header-section-number">5.2.1</span> Valores padrão</h3>
 <p>Podemos atribuir um <strong>valor padrão</strong> a um parâmetro. Se nenhum argumento for passado, o Python usa o padrão automaticamente:</p>
-<div id="48062684" class="cell" data-execution_count="4">
+<div id="31de052d" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saudacao(nome<span class="op">=</span><span class="st">"visitante"</span>):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Olá, </span><span class="sc">{</span>nome<span class="sc">}</span><span class="ss">! Seja bem-vindo(a)!"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -393,7 +399,7 @@ Olá, visitante! Seja bem-vindo(a)!</code></pre>
 <section id="parâmetros-posicionais-e-nomeados" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="parâmetros-posicionais-e-nomeados"><span class="header-section-number">5.2.2</span> Parâmetros posicionais e nomeados</h3>
 <p>Quando uma função recebe vários parâmetros, o Python os associa <strong>pela ordem</strong> em que são passados — isso é chamado de <strong>argumento posicional</strong>:</p>
-<div id="017b9981" class="cell" data-execution_count="5">
+<div id="e372f1c4" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> apresentar(nome, curso):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Meu nome é </span><span class="sc">{</span>nome<span class="sc">}</span><span class="ss"> e o meu curso é </span><span class="sc">{</span>curso<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -404,14 +410,14 @@ Olá, visitante! Seja bem-vindo(a)!</code></pre>
 </div>
 </div>
 <p>Se a ordem for trocada acidentalmente, o resultado fica semanticamente incorreto:</p>
-<div id="0d87427c" class="cell" data-execution_count="6">
+<div id="bd8f6080" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>apresentar(<span class="st">"Economia"</span>, <span class="st">"Arthur"</span>)  <span class="co"># saída incorreta!</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Meu nome é Economia e o meu curso é Arthur</code></pre>
 </div>
 </div>
 <p>Para evitar esse tipo de erro, podemos usar <strong>argumentos nomeados</strong>, informando explicitamente a qual parâmetro cada valor pertence. Com argumentos nomeados, a ordem não importa:</p>
-<div id="b02478b8" class="cell" data-execution_count="7">
+<div id="ab7ba71a" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>apresentar(nome<span class="op">=</span><span class="st">"Arthur"</span>, curso<span class="op">=</span><span class="st">"Economia"</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>apresentar(curso<span class="op">=</span><span class="st">"Economia"</span>, nome<span class="op">=</span><span class="st">"Arthur"</span>)  <span class="co"># mesmo resultado</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -423,7 +429,7 @@ Meu nome é Arthur e o meu curso é Economia</code></pre>
 <section id="exemplo-juros-compostos" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="exemplo-juros-compostos"><span class="header-section-number">5.2.3</span> Exemplo: juros compostos</h3>
 <p>A fórmula de juros compostos <span class="math inline">\(M = C \cdot (1 + i)^t\)</span> é um conceito central em finanças. O parâmetro padrão <code>periodos=1</code> é útil quando queremos calcular o rendimento de um único período sem precisar especificá-lo toda vez:</p>
-<div id="865701cd" class="cell" data-execution_count="8">
+<div id="b795a9af" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> juros_compostos(capital, taxa, periodos<span class="op">=</span><span class="dv">1</span>):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    montante <span class="op">=</span> capital <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> taxa) <span class="op">**</span> periodos</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    rendimento <span class="op">=</span> montante <span class="op">-</span> capital</span>
@@ -462,7 +468,7 @@ Montante final:   R$ 10,616.78</code></pre>
 <h2 data-number="5.3" class="anchored" data-anchor-id="retornando-valores"><span class="header-section-number">5.3</span> Retornando valores</h2>
 <p>Até agora, nossas funções apenas exibiam resultados com <code>print()</code>. A palavra-chave <code>return</code> permite que uma função <strong>devolva um resultado</strong> para quem a chamou, possibilitando seu uso em expressões e cálculos posteriores.</p>
 <p>Essa é uma das distinções mais importantes para iniciantes:</p>
-<div id="d6bc26c3" class="cell" data-execution_count="9">
+<div id="f2e2fbb8" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Versão com print: o resultado é exibido, mas não pode ser reutilizado</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dobro_print(n):</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(n <span class="op">*</span> <span class="dv">2</span>)</span>
@@ -504,7 +510,7 @@ None
 <section id="exemplo-encadeando-cálculos" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="exemplo-encadeando-cálculos"><span class="header-section-number">5.3.1</span> Exemplo: encadeando cálculos</h3>
 <p>A <strong>modularização</strong> — dividir um problema em funções menores, cada uma fazendo uma coisa só — é uma das práticas mais importantes em programação. O exemplo abaixo calcula o salário líquido descontando INSS e IRPF, com cada etapa em sua própria função:</p>
-<div id="2fb7a0af" class="cell" data-execution_count="10">
+<div id="179665e6" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_inss(salario_bruto):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    teto_inss <span class="op">=</span> <span class="fl">8_475.55</span>  <span class="co"># teto do INSS em 2026</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    salario_inss <span class="op">=</span> <span class="bu">min</span>(salario_bruto, teto_inss)</span>
@@ -576,7 +582,7 @@ R$    12,000.00 | R$  988.09 | R$ 2,119.54 | R$      8,892.36</code></pre>
 <section id="múltiplos-retornos" class="level3" data-number="5.3.2">
 <h3 data-number="5.3.2" class="anchored" data-anchor-id="múltiplos-retornos"><span class="header-section-number">5.3.2</span> Múltiplos retornos</h3>
 <p>Uma função pode retornar <strong>mais de um valor</strong> separando-os por vírgula. O Python os agrupa em uma <strong>tupla</strong>, que pode ser desempacotada em variáveis distintas:</p>
-<div id="55bb3611" class="cell" data-execution_count="11">
+<div id="76d166e5" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> operacoes(a, b):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    soma    <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    produto <span class="op">=</span> a <span class="op">*</span> b</span>
@@ -590,7 +596,7 @@ R$    12,000.00 | R$  988.09 | R$ 2,119.54 | R$      8,892.36</code></pre>
 </div>
 </div>
 <p>Também é possível retornar dicionários, o que é especialmente útil quando os resultados têm nomes significativos:</p>
-<div id="1e6dc9d3" class="cell" data-execution_count="12">
+<div id="74bd75a8" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statistics</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> descritivas(x):</span>
@@ -609,7 +615,7 @@ R$    12,000.00 | R$  988.09 | R$ 2,119.54 | R$      8,892.36</code></pre>
 <section id="exemplo-métricas-de-inflação" class="level3" data-number="5.3.3">
 <h3 data-number="5.3.3" class="anchored" data-anchor-id="exemplo-métricas-de-inflação"><span class="header-section-number">5.3.3</span> Exemplo: métricas de inflação</h3>
 <p>O exemplo abaixo calcula a inflação acumulada e a média mensal a partir de uma lista de taxas mensais, retornando ambas em uma única chamada:</p>
-<div id="f39d6523" class="cell" data-execution_count="13">
+<div id="dbfe4e1e" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analisar_inflacao(taxas_mensais):</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Inflação acumulada: produto de (1 + taxa) para cada mês</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    acumulada <span class="op">=</span> <span class="dv">1</span></span>
@@ -642,7 +648,7 @@ Inflação média mensal:     0.46%</code></pre>
 <p>No capítulo anterior, escrevemos um código para simular o Teorema Central do Limite (TCL): ao retirar muitas amostras de uma distribuição e calcular a média de cada uma, a distribuição dessas médias tende a ser normal — independentemente da distribuição original.</p>
 <p>O código original funcionava, mas tinha uma limitação: os parâmetros da simulação estavam fixados diretamente no código. Para testar cenários diferentes, era preciso reescrevê-lo toda vez.</p>
 <p>Transformar esse código em uma <strong>função reutilizável</strong> resolve o problema. Os parâmetros com valores padrão (<code>n_amostras=10000</code>, <code>tamanho_amostra=30</code>, <code>seed=1234</code>) deixam a função flexível: ela funciona sem nenhum argumento, mas também aceita configurações personalizadas.</p>
-<div id="a4978cf6" class="cell" data-execution_count="14">
+<div id="426f177c" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simular_tcl(n_amostras<span class="op">=</span><span class="dv">10000</span>, tamanho_amostra<span class="op">=</span><span class="dv">30</span>, seed<span class="op">=</span><span class="dv">1234</span>):</span>
@@ -677,7 +683,7 @@ Inflação média mensal:     0.46%</code></pre>
 <section id="verificando-a-convergência" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="verificando-a-convergência"><span class="header-section-number">5.4.1</span> Verificando a convergência</h3>
 <p>Uma das demonstrações clássicas do TCL é observar como a média das médias converge para o valor teórico (<span class="math inline">\(\mu = 0{,}5\)</span> no caso da <span class="math inline">\(U(0,1)\)</span>) conforme aumentamos o número de amostras. Com a função, isso fica muito mais claro:</p>
-<div id="6ea45d9d" class="cell" data-execution_count="15">
+<div id="abb5e117" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>lista_n_amostras <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1_000</span>, <span class="dv">10_000</span>, <span class="dv">100_000</span>]</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Nº de amostras'</span><span class="sc">:&gt;16}</span><span class="ss"> | </span><span class="sc">{</span><span class="st">'Média das médias'</span><span class="sc">:&gt;18}</span><span class="ss"> | </span><span class="sc">{</span><span class="st">'Erro vs. 0.5'</span><span class="sc">:&gt;14}</span><span class="ss">"</span>)</span>
@@ -705,7 +711,7 @@ Inflação média mensal:     0.46%</code></pre>
 <h2 data-number="5.5" class="anchored" data-anchor-id="docstrings"><span class="header-section-number">5.5</span> Docstrings</h2>
 <p><strong>Docstrings</strong> são strings de documentação escritas logo abaixo do cabeçalho de uma função, entre aspas triplas (<code>"""</code>). Elas descrevem o que a função faz, quais parâmetros recebe e o que retorna.</p>
 <p>Boas docstrings tornam o código muito mais fácil de entender e manter — especialmente quando você retorna a ele depois de semanas, ou quando compartilha com colegas. Você pode consultá-las a qualquer momento com <code>help()</code>:</p>
-<div id="397a2f1e" class="cell" data-execution_count="16">
+<div id="53c4f491" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> taxa_desemprego(desempregados, populacao_ativa):</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calcula a taxa de desemprego de uma economia.</span></span>
@@ -726,17 +732,17 @@ Inflação média mensal:     0.46%</code></pre>
 
 taxa_desemprego(desempregados, populacao_ativa)
     Calcula a taxa de desemprego de uma economia.
-    
+
     Parâmetros:
         desempregados (float): número de pessoas desempregadas.
         populacao_ativa (float): tamanho da força de trabalho (PEA).
-    
+
     Retorna:
         float: taxa de desemprego, expressa em percentual (%).
 </code></pre>
 </div>
 </div>
-<div id="48782b79" class="cell" data-execution_count="17">
+<div id="a3299ad3" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados hipotéticos (em milhões de pessoas)</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>taxa <span class="op">=</span> taxa_desemprego(desempregados<span class="op">=</span><span class="fl">8.5</span>, populacao_ativa<span class="op">=</span><span class="fl">107.0</span>)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Taxa de desemprego: </span><span class="sc">{</span>taxa<span class="sc">:.1f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -751,7 +757,7 @@ taxa_desemprego(desempregados, populacao_ativa)
 <section id="escopo-local" class="level3" data-number="5.6.1">
 <h3 data-number="5.6.1" class="anchored" data-anchor-id="escopo-local"><span class="header-section-number">5.6.1</span> Escopo local</h3>
 <p>Uma variável definida dentro de uma função existe apenas dentro dela:</p>
-<div id="3544a36d" class="cell" data-execution_count="18">
+<div id="2ec998f2" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> funcao_local():</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    mensagem <span class="op">=</span> <span class="st">"Olá, Mundo!"</span>  <span class="co"># variável local</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(mensagem)</span>
@@ -766,10 +772,10 @@ taxa_desemprego(desempregados, populacao_ativa)
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[17], line 7</span>
-<span class="ansi-green-fg ansi-bold">      3</span>     <span style="color:rgb(0,135,0)">print</span>(mensagem)
-<span class="ansi-green-fg ansi-bold">      6</span> funcao_local()      <span style="font-style:italic;color:rgb(95,135,135)"># funciona</span>
-<span class="ansi-green-fg">----&gt; 7</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">mensagem</span>)     <span style="font-style:italic;color:rgb(95,135,135)"># NameError: não existe fora da função</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[17]</span><span class="ansi-green-fg">, line 7</span>
+<span class="ansi-green-fg">      3</span>     <span style="color:rgb(0,135,0)">print</span>(mensagem)
+<span class="ansi-green-fg">      6</span> funcao_local()      <span style="font-style:italic;color:rgb(95,135,135)"># funciona</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">7</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">mensagem</span>)     <span style="font-style:italic;color:rgb(95,135,135)"># NameError: não existe fora da função</span>
 
 <span class="ansi-red-fg">NameError</span>: name 'mensagem' is not defined</pre>
 </div>
@@ -779,7 +785,7 @@ Cell <span class="ansi-green-fg">In[17], line 7</span>
 <section id="escopo-enclosing" class="level3" data-number="5.6.2">
 <h3 data-number="5.6.2" class="anchored" data-anchor-id="escopo-enclosing"><span class="header-section-number">5.6.2</span> Escopo enclosing</h3>
 <p>Se uma função está dentro de outra, a interna pode acessar as variáveis da externa — mas não o contrário:</p>
-<div id="9b7cfa88" class="cell" data-execution_count="19">
+<div id="378c4bb5" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> funcao_externa():</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    mensagem <span class="op">=</span> <span class="st">"Olá, Mundo!"</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -799,7 +805,7 @@ Cell <span class="ansi-green-fg">In[17], line 7</span>
 <h3 data-number="5.6.3" class="anchored" data-anchor-id="escopo-global"><span class="header-section-number">5.6.3</span> Escopo global</h3>
 <p>Uma variável definida fora de todas as funções pode ser <strong>lida</strong> de qualquer lugar. No entanto, para <strong>modificá-la</strong> dentro de uma função, é necessário declará-la com a palavra-chave <code>global</code>.</p>
 <p>Primeiro, a leitura sem problema:</p>
-<div id="ef2d0873" class="cell" data-execution_count="20">
+<div id="a93dc309" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>poupanca <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> banco():</span>
@@ -812,7 +818,7 @@ Cell <span class="ansi-green-fg">In[17], line 7</span>
 </div>
 </div>
 <p>Agora, a tentativa de modificação <strong>sem</strong> <code>global</code>:</p>
-<div id="7c520c48" class="cell" data-execution_count="21">
+<div id="18071f6d" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>poupanca <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> deposito(n):</span>
@@ -823,16 +829,16 @@ Cell <span class="ansi-green-fg">In[17], line 7</span>
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">UnboundLocalError</span>                         Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[20], line 6</span>
-<span class="ansi-green-fg ansi-bold">      3</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span> <span style="color:rgb(0,0,255)">deposito</span>(n):
-<span class="ansi-green-fg ansi-bold">      4</span>     poupanca <span style="color:rgb(98,98,98)">+</span><span style="color:rgb(98,98,98)">=</span> n   <span style="font-style:italic;color:rgb(95,135,135)"># UnboundLocalError!</span>
-<span class="ansi-green-fg">----&gt; 6</span> <span class="ansi-yellow-bg">deposito</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">500</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[20]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-green-fg">      3</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">deposito</span>(n):
+<span class="ansi-green-fg">      4</span>     poupanca += n   <span style="font-style:italic;color:rgb(95,135,135)"># UnboundLocalError!</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">6</span> <span class="ansi-yellow-bg">deposito</span><span class="ansi-yellow-bg">(</span><span class="ansi-green-fg ansi-yellow-bg">500</span><span class="ansi-yellow-bg">)</span>
 
-Cell <span class="ansi-green-fg">In[20], line 4</span>, in <span class="ansi-cyan-fg">deposito</span><span class="ansi-blue-fg">(n)</span>
-<span class="ansi-green-fg ansi-bold">      3</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span> <span style="color:rgb(0,0,255)">deposito</span>(n):
-<span class="ansi-green-fg">----&gt; 4</span>     poupanca <span style="color:rgb(98,98,98)">+</span><span style="color:rgb(98,98,98)">=</span> n
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[20]</span><span class="ansi-green-fg">, line 4</span>, in <span class="ansi-cyan-fg">deposito</span><span class="ansi-blue-fg">(n)</span>
+<span class="ansi-green-fg">      3</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">deposito</span>(n):
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">4</span>     <span class="ansi-yellow-bg">poupanca</span> += n
 
-<span class="ansi-red-fg">UnboundLocalError</span>: local variable 'poupanca' referenced before assignment</pre>
+<span class="ansi-red-fg">UnboundLocalError</span>: cannot access local variable 'poupanca' where it is not associated with a value</pre>
 </div>
 </div>
 </div>
@@ -850,7 +856,7 @@ Cell <span class="ansi-green-fg">In[20], line 4</span>, in <span class="ansi-cya
 </div>
 </div>
 <p>A solução é usar <code>global</code> para avisar ao Python que a variável em questão pertence ao escopo global:</p>
-<div id="e635c031" class="cell" data-execution_count="22">
+<div id="0fd31887" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>poupanca <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> deposito(n):</span>
@@ -890,7 +896,7 @@ Cell <span class="ansi-green-fg">In[20], line 4</span>, in <span class="ansi-cya
 <h3 data-number="5.6.4" class="anchored" data-anchor-id="escopo-enclosing-com-nonlocal"><span class="header-section-number">5.6.4</span> Escopo enclosing com <code>nonlocal</code></h3>
 <p>A palavra-chave <code>nonlocal</code> funciona de forma similar a <code>global</code>, mas atua no escopo <em>enclosing</em>: permite que uma função interna modifique uma variável da função que a contém.</p>
 <p>No exemplo abaixo, <code>transacao</code> precisa de <code>nonlocal</code> para incrementar o contador definido em <code>registrar_transacoes</code>:</p>
-<div id="a8416c1f" class="cell" data-execution_count="23">
+<div id="7ef3b325" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> registrar_transacoes():</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    total_transacoes <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -917,7 +923,7 @@ Total de transações registradas: 3</code></pre>
 <section id="escopo-built-in" class="level3" data-number="5.6.5">
 <h3 data-number="5.6.5" class="anchored" data-anchor-id="escopo-built-in"><span class="header-section-number">5.6.5</span> Escopo built-in</h3>
 <p>O escopo <em>built-in</em> contém os nomes pré-definidos do Python — funções como <code>print</code>, <code>len</code>, <code>range</code> e <code>sum</code>. Eles estão sempre disponíveis, em qualquer parte do código:</p>
-<div id="fdee5ff1" class="cell" data-execution_count="24">
+<div id="89cc67a4" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(<span class="st">"Python"</span>))   <span class="co"># len é uma função built-in</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>6</code></pre>
@@ -949,7 +955,7 @@ Total de transações registradas: 3</code></pre>
 </div>
 <section id="args-múltiplos-argumentos-posicionais" class="level3" data-number="5.7.1">
 <h3 data-number="5.7.1" class="anchored" data-anchor-id="args-múltiplos-argumentos-posicionais"><span class="header-section-number">5.7.1</span> <code>*args</code>: múltiplos argumentos posicionais</h3>
-<div id="725b35c0" class="cell" data-execution_count="25">
+<div id="e58aa743" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> adicao(<span class="op">*</span>args):</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    resultado <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> argumento <span class="kw">in</span> args:</span>
@@ -971,7 +977,7 @@ Total de transações registradas: 3</code></pre>
 <p>Uma das identidades macroeconômicas mais fundamentais é:</p>
 <p><span class="math display">\[Y = C + I + G + (X - M)\]</span></p>
 <p>onde <span class="math inline">\(C\)</span> é o consumo das famílias, <span class="math inline">\(I\)</span> o investimento, <span class="math inline">\(G\)</span> os gastos do governo, <span class="math inline">\(X\)</span> as exportações e <span class="math inline">\(M\)</span> as importações. Em vez de repetir essa fórmula toda vez que precisarmos calculá-la, podemos encapsulá-la em uma função:</p>
-<div id="f243b406" class="cell" data-execution_count="26">
+<div id="e58b54e9" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_pib(consumo, investimento, gastos_governo, exportacoes, importacoes):</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    pib <span class="op">=</span> consumo <span class="op">+</span> investimento <span class="op">+</span> gastos_governo <span class="op">+</span> (exportacoes <span class="op">-</span> importacoes)</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"PIB calculado: R$ </span><span class="sc">{</span>pib<span class="sc">:.2f}</span><span class="ss"> bilhões"</span>)</span>
@@ -990,7 +996,7 @@ Total de transações registradas: 3</code></pre>
 </div>
 </div>
 <p>Com <code>*args</code>, podemos criar uma função que soma todos os componentes do PIB, independentemente de quantos forem passados:</p>
-<div id="6a663b7c" class="cell" data-execution_count="27">
+<div id="b696fcfc" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_pib(<span class="op">*</span>componentes):</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Soma todos os componentes do PIB passados como argumentos."""</span></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(componentes)</span>
@@ -1011,7 +1017,7 @@ PIB completo:     R$ 8,300 bi</code></pre>
 <section id="kwargs-múltiplos-argumentos-nomeados" class="level3" data-number="5.7.2">
 <h3 data-number="5.7.2" class="anchored" data-anchor-id="kwargs-múltiplos-argumentos-nomeados"><span class="header-section-number">5.7.2</span> <code>**kwargs</code>: múltiplos argumentos nomeados</h3>
 <p><code>**kwargs</code> agrupa os argumentos passados com nome em um dicionário dentro da função:</p>
-<div id="15286bb8" class="cell" data-execution_count="28">
+<div id="d7c58b03" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> concatenar(<span class="op">**</span>kwargs):</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Valores recebidos: </span><span class="sc">{</span>kwargs<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    resultado <span class="op">=</span> <span class="st">""</span></span>
@@ -1032,7 +1038,7 @@ Economia FEA-USP </code></pre>
 <section id="exemplo-relatório-de-indicadores-macroeconômicos" class="level4" data-number="5.7.2.1">
 <h4 data-number="5.7.2.1" class="anchored" data-anchor-id="exemplo-relatório-de-indicadores-macroeconômicos"><span class="header-section-number">5.7.2.1</span> Exemplo: relatório de indicadores macroeconômicos</h4>
 <p>Com <code>**kwargs</code>, podemos gerar relatórios com qualquer conjunto de variáveis — útil quando comparamos países com disponibilidades de dados diferentes:</p>
-<div id="1e0ec819" class="cell" data-execution_count="29">
+<div id="d652593f" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> relatorio_macro(pais, <span class="op">**</span>indicadores):</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Exibe um relatório de indicadores macroeconômicos.</span></span>
@@ -1077,7 +1083,7 @@ Economia FEA-USP </code></pre>
 </section>
 <section id="combinando-args-e-kwargs" class="level3" data-number="5.7.3">
 <h3 data-number="5.7.3" class="anchored" data-anchor-id="combinando-args-e-kwargs"><span class="header-section-number">5.7.3</span> Combinando <code>*args</code> e <code>**kwargs</code></h3>
-<div id="f3007af3" class="cell" data-execution_count="30">
+<div id="0115580c" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> relatorio_economico(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Valores agregados:"</span>, <span class="bu">sum</span>(args))</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> chave, valor <span class="kw">in</span> kwargs.items():</span>
@@ -1098,7 +1104,7 @@ investimento: 2000</code></pre>
 <p>Funções <strong>lambda</strong> são funções anônimas — definidas sem nome, em uma única linha. São úteis para operações simples e temporárias, especialmente como argumento para outras funções. A sintaxe é:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="kw">lambda</span> <span class="op">&lt;</span>argumentos<span class="op">&gt;</span> : <span class="op">&lt;</span>expressão<span class="op">&gt;</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Um exemplo simples:</p>
-<div id="1fbf6231" class="cell" data-execution_count="31">
+<div id="ccdcaa96" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>soma <span class="op">=</span> <span class="kw">lambda</span> x, y: x <span class="op">+</span> y</span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(soma(<span class="dv">5</span>, <span class="dv">3</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1108,7 +1114,7 @@ investimento: 2000</code></pre>
 <section id="função-map" class="level3" data-number="5.8.1">
 <h3 data-number="5.8.1" class="anchored" data-anchor-id="função-map"><span class="header-section-number">5.8.1</span> Função <code>map()</code></h3>
 <p><code>map()</code> aplica uma função a cada elemento de uma sequência. Com lambda, isso fica muito conciso:</p>
-<div id="e2b9b633" class="cell" data-execution_count="32">
+<div id="d0033024" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>numeros  <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>quadrados <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">**</span> <span class="dv">2</span>, numeros))</span>
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quadrados)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1135,7 +1141,7 @@ investimento: 2000</code></pre>
 </div>
 </div>
 <p>No código abaixo, aplicamos a fórmula a cada preço da lista usando <code>map()</code> com uma função lambda — um caso típico em que lambda é mais conciso do que definir uma função completa com <code>def</code>:</p>
-<div id="dfbda3f4" class="cell" data-execution_count="33">
+<div id="19babc5f" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>precos_nominais    <span class="op">=</span> [<span class="fl">10.00</span>, <span class="fl">12.50</span>, <span class="fl">9.80</span>, <span class="fl">15.00</span>, <span class="fl">11.30</span>]</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>inflacao_acumulada <span class="op">=</span> <span class="fl">0.15</span> <span class="co"># 15% de inflação acumulada no período</span></span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1158,7 +1164,7 @@ investimento: 2000</code></pre>
 <section id="função-filter" class="level3" data-number="5.8.2">
 <h3 data-number="5.8.2" class="anchored" data-anchor-id="função-filter"><span class="header-section-number">5.8.2</span> Função <code>filter()</code></h3>
 <p><code>filter()</code> seleciona os elementos de uma sequência que satisfazem um critério booleano:</p>
-<div id="ee373be0" class="cell" data-execution_count="34">
+<div id="d2dc0de1" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>numeros      <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>numeros_pares <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>, numeros))</span>
 <span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numeros_pares)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1168,7 +1174,7 @@ investimento: 2000</code></pre>
 </div>
 <section id="exemplo-países-com-inflação-acima-da-meta" class="level4" data-number="5.8.2.1">
 <h4 data-number="5.8.2.1" class="anchored" data-anchor-id="exemplo-países-com-inflação-acima-da-meta"><span class="header-section-number">5.8.2.1</span> Exemplo: países com inflação acima da meta</h4>
-<div id="aca0d3fe" class="cell" data-execution_count="35">
+<div id="0158f18e" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>paises_inflacao <span class="op">=</span> [</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Brasil"</span>,    <span class="fl">4.8</span>),</span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Chile"</span>,     <span class="fl">3.2</span>),</span>
@@ -1213,7 +1219,7 @@ investimento: 2000</code></pre>
 <p>Dicionários em Python armazenam pares <code>chave: valor</code>. O método <code>.items()</code> retorna esses pares como uma sequência de tuplas <code>(chave, valor)</code>, o que permite iterá-los e ordená-los como qualquer outra sequência.</p>
 </div>
 </div>
-<div id="189ef09c" class="cell" data-execution_count="36">
+<div id="ab907943" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordenando uma lista de tuplas pelo segundo elemento</span></span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>minha_lista         <span class="op">=</span> [(<span class="st">"maçã"</span>, <span class="dv">1</span>), (<span class="st">"banana"</span>, <span class="dv">3</span>), (<span class="st">"laranja"</span>, <span class="dv">2</span>)]</span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>minha_lista_ordenada <span class="op">=</span> <span class="bu">sorted</span>(minha_lista, key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>])</span>
@@ -1235,7 +1241,7 @@ investimento: 2000</code></pre>
 </div>
 <section id="exemplo-ranking-de-países-por-pib-per-capita" class="level4" data-number="5.8.3.1">
 <h4 data-number="5.8.3.1" class="anchored" data-anchor-id="exemplo-ranking-de-países-por-pib-per-capita"><span class="header-section-number">5.8.3.1</span> Exemplo: ranking de países por PIB per capita</h4>
-<div id="76127fc0" class="cell" data-execution_count="37">
+<div id="55716386" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (país, PIB per capita em US$ mil, taxa de desemprego em %)</span></span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>paises <span class="op">=</span> [</span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Brasil"</span>,    <span class="fl">9.0</span>,  <span class="fl">6.2</span>),</span>

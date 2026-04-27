@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Programação Orientada a Objetos – EAE1106 - Métodos Computacionais para Economia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./regex.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8b4baf804e461d9b72633f0de59a0cac.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-25a4e8620ae17d49cd0c3861fdf92567.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-01.html">Fundamentos de Computação</a></li><li class="breadcrumb-item"><a href="./poo.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/usp.jpg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/usp.jpg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">EAE1106 - Métodos Computacionais para Economia</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/arthurviaro/eae1106" title="Código fonte" class="quarto-navigation-tool px-1" aria-label="Código fonte"><i class="bi bi-github"></i></a>
+    <a href="./EAE1106---Métodos-Computacionais-para-Economia.pdf" title="Baixar PDF" class="quarto-navigation-tool px-1" aria-label="Baixar PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Procurar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sobre este material</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prefacio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./ch-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentos de Computação</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fundamentos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Como um computador funciona</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./primeiros-passos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Primeiros passos no Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tipos-dados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipos de Dados e Expressões</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./controle-fluxo-iteracao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Controle de fluxo e iteração</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./funcoes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funções</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./excecoes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exceções</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Expressões Regulares</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./poo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#o-que-e-poo" id="toc-o-que-e-poo" class="nav-link active" data-scroll-target="#o-que-e-poo"><span class="header-section-number">8.1</span> O que é Programação Orientada a Objetos?</a></li>
+  <li><a href="#por-que-classes" id="toc-por-que-classes" class="nav-link" data-scroll-target="#por-que-classes"><span class="header-section-number">8.2</span> Por que usar classes?</a></li>
+  <li><a href="#definindo-classe" id="toc-definindo-classe" class="nav-link" data-scroll-target="#definindo-classe"><span class="header-section-number">8.3</span> Definindo uma classe</a>
+  <ul class="collapse">
+  <li><a href="#classes-vs.-instâncias" id="toc-classes-vs.-instâncias" class="nav-link" data-scroll-target="#classes-vs.-instâncias"><span class="header-section-number">8.3.1</span> Classes vs.&nbsp;instâncias</a></li>
+  <li><a href="#o-método-__init__-e-atributos-de-instância" id="toc-o-método-__init__-e-atributos-de-instância" class="nav-link" data-scroll-target="#o-método-__init__-e-atributos-de-instância"><span class="header-section-number">8.3.2</span> O método <code>__init__</code> e atributos de instância</a></li>
+  </ul></li>
+  <li><a href="#instanciando-classe" id="toc-instanciando-classe" class="nav-link" data-scroll-target="#instanciando-classe"><span class="header-section-number">8.4</span> Instanciando uma classe</a></li>
+  <li><a href="#metodos-instancia" id="toc-metodos-instancia" class="nav-link" data-scroll-target="#metodos-instancia"><span class="header-section-number">8.5</span> Métodos de instância</a>
+  <ul class="collapse">
+  <li><a href="#métodos-especiais-dunder-methods" id="toc-métodos-especiais-dunder-methods" class="nav-link" data-scroll-target="#métodos-especiais-dunder-methods"><span class="header-section-number">8.5.1</span> Métodos especiais (<em>dunder methods</em>)</a></li>
+  </ul></li>
+  <li><a href="#tipos-embutidos" id="toc-tipos-embutidos" class="nav-link" data-scroll-target="#tipos-embutidos"><span class="header-section-number">8.6</span> Os tipos embutidos são classes</a></li>
+  <li><a href="#heranca" id="toc-heranca" class="nav-link" data-scroll-target="#heranca"><span class="header-section-number">8.7</span> Herança</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-tipos-de-conta" id="toc-exemplo-tipos-de-conta" class="nav-link" data-scroll-target="#exemplo-tipos-de-conta"><span class="header-section-number">8.7.1</span> Exemplo: tipos de conta</a></li>
+  <li><a href="#classes-pai-e-classes-filha" id="toc-classes-pai-e-classes-filha" class="nav-link" data-scroll-target="#classes-pai-e-classes-filha"><span class="header-section-number">8.7.2</span> Classes pai e classes filha</a></li>
+  </ul></li>
+  <li><a href="#polimorfismo" id="toc-polimorfismo" class="nav-link" data-scroll-target="#polimorfismo"><span class="header-section-number">8.8</span> Polimorfismo</a></li>
+  <li><a href="#aplicacao-solow" id="toc-aplicacao-solow" class="nav-link" data-scroll-target="#aplicacao-solow"><span class="header-section-number">8.9</span> Aplicação: Modelo de Solow</a></li>
+  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">8.10</span> Exercícios</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/arthurviaro/eae1106/issues/new" class="toc-action"><i class="bi bi-github"></i>Criar uma issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-01.html">Fundamentos de Computação</a></li><li class="breadcrumb-item"><a href="./poo.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="poo" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>A <strong>Programação Orientada a Objetos (POO)</strong> em Python ajuda a estruturar o código agrupando dados e comportamentos relacionados em <strong>objetos</strong>. Você começa definindo <strong>classes</strong> — que funcionam como moldes — e então cria objetos a partir delas. A POO simplifica a modelagem de conceitos do mundo real e permite construir sistemas mais reutilizáveis e escaláveis.</p>
+<p>Ao final deste capítulo, você será capaz de:</p>
+<ul>
+<li>Definir classes como moldes para objetos</li>
+<li>Instanciar classes para criar objetos com dados reais</li>
+<li>Usar atributos e métodos para definir propriedades e comportamentos</li>
+<li>Criar subclasses por meio de herança</li>
+<li>Chamar métodos da classe pai com <code>super()</code></li>
+<li>Verificar a hierarquia de classes com <code>isinstance()</code></li>
+</ul>
+<section id="o-que-e-poo" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="o-que-e-poo"><span class="header-section-number">8.1</span> O que é Programação Orientada a Objetos?</h2>
+<p>A POO é um <strong>paradigma de programação</strong> que estrutura os programas em torno de <strong>objetos</strong> — entidades que combinam dados e comportamentos relacionados.</p>
+<p>Por exemplo, um objeto pode representar um <strong>consumidor</strong> com atributos como nome e renda, e comportamentos como consumir e poupar. Ou pode representar uma <strong>empresa</strong> com atributos como receita e custos, e comportamentos como contratar e produzir.</p>
+<p>A POO é frequentemente descrita em torno de <strong>quatro pilares</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pilar</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Encapsulamento</strong></td>
+<td>Agrupa dados e comportamentos em uma classe, controlando o acesso e protegendo a integridade dos dados</td>
+</tr>
+<tr class="even">
+<td><strong>Herança</strong></td>
+<td>Permite criar hierarquias de classes, onde subclasses herdam atributos e métodos da classe pai</td>
+</tr>
+<tr class="odd">
+<td><strong>Abstração</strong></td>
+<td>Esconde detalhes de implementação, expondo apenas a interface essencial do objeto</td>
+</tr>
+<tr class="even">
+<td><strong>Polimorfismo</strong></td>
+<td>Permite que objetos de classes diferentes respondam ao mesmo método de formas distintas</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p><strong>Ideia central</strong>: em outros paradigmas, objetos apenas representam dados. Na POO, eles também informam a estrutura geral do programa.</p>
+</blockquote>
+</section>
+<section id="por-que-classes" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="por-que-classes"><span class="header-section-number">8.2</span> Por que usar classes?</h2>
+<p>Tipos primitivos — como números, strings e listas — são projetados para representar informações simples. Mas e quando precisamos representar algo mais complexo?</p>
+<p>Por exemplo, suponha que queremos registrar contas bancárias com titular, saldo, tipo e número. Uma abordagem ingênua seria usar listas:</p>
+<div id="79301516" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conta1 <span class="op">=</span> [<span class="st">"João"</span>, <span class="dv">1500</span>, <span class="st">"corrente"</span>, <span class="st">"001-5"</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>conta2 <span class="op">=</span> [<span class="st">"Maria"</span>, <span class="dv">3200</span>, <span class="st">"poupança"</span>, <span class="st">"002-8"</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>conta3 <span class="op">=</span> [<span class="st">"Pedro"</span>, <span class="st">"corrente"</span>]  <span class="co"># saldo esquecido!</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Problema 1: é preciso memorizar o que cada índice significa</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Titular: </span><span class="sc">{</span>conta1[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)    <span class="co"># ok — mas exige memorizar índice 0 = titular</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Saldo:   </span><span class="sc">{</span>conta1[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)    <span class="co"># ok — mas exige memorizar índice 1 = saldo</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Problema 2: listas incompletas causam erros silenciosos</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Saldo de Pedro: </span><span class="sc">{</span>conta3[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># retorna "corrente" em vez do saldo!</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Titular: João
+Saldo:   1500
+Saldo de Pedro: corrente</code></pre>
+</div>
+</div>
+<p>Existem dois problemas com essa abordagem:</p>
+<ol type="1">
+<li><strong>Legibilidade ruim</strong>: <code>conta1[0]</code> representa o titular, mas isso só é óbvio se você lembrar a posição de cada campo.</li>
+<li><strong>Fragilidade</strong>: se uma lista tiver menos elementos (como <code>conta3</code>, sem saldo), acessar índices fixos retorna valores errados — silenciosamente.</li>
+</ol>
+<p>Uma <strong>classe</strong> resolve esses problemas ao nomear explicitamente cada atributo e garantir que todo objeto tenha a mesma estrutura.</p>
+</section>
+<section id="definindo-classe" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="definindo-classe"><span class="header-section-number">8.3</span> Definindo uma classe</h2>
+<section id="classes-vs.-instâncias" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="classes-vs.-instâncias"><span class="header-section-number">8.3.1</span> Classes vs.&nbsp;instâncias</h3>
+<p>Uma <strong>classe</strong> é como um formulário em branco: define os campos e as regras, mas não contém dados reais. Uma <strong>instância</strong> é como um formulário preenchido — um objeto concreto, com valores próprios.</p>
+<blockquote class="blockquote">
+<p>Assim como muitos clientes podem abrir uma conta no mesmo banco com informações diferentes, você pode criar muitas instâncias a partir de uma única classe.</p>
+</blockquote>
+<p>Toda definição começa com <code>class</code>, o nome (em <code>CamelCase</code>) e dois-pontos. O corpo é indentado. O exemplo mais simples usa <code>pass</code> como corpo provisório:</p>
+<div id="5c3ebe9e" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContaBancaria:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Instanciando a classe: criando objetos</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> ContaBancaria()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> ContaBancaria()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)      <span class="co"># &lt;__main__.ContaBancaria object at 0x...&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">==</span> b) <span class="co"># False — são objetos distintos na memória</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;__main__.ContaBancaria object at 0x103ac5940&gt;
+&lt;__main__.ContaBancaria object at 0x11fa00910&gt;
+False</code></pre>
+</div>
+</div>
+</section>
+<section id="o-método-__init__-e-atributos-de-instância" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="o-método-__init__-e-atributos-de-instância"><span class="header-section-number">8.3.2</span> O método <code>__init__</code> e atributos de instância</h3>
+<p>Para que cada objeto tenha dados próprios, definimos o método especial <code>__init__</code>. Ele é chamado automaticamente toda vez que um novo objeto é criado.</p>
+<ul>
+<li>O primeiro parâmetro é sempre <code>self</code> — uma referência ao próprio objeto que está sendo criado.</li>
+<li><code>self.titular = titular</code> cria um <strong>atributo de instância</strong>: um dado específico àquele objeto.</li>
+<li>Atributos de instância podem ter <strong>valores diferentes</strong> para cada objeto.</li>
+</ul>
+<p>Além dos atributos de instância, podemos definir <strong>atributos de classe</strong> — valores compartilhados por <strong>todos</strong> os objetos da classe, definidos diretamente no corpo da classe (fora do <code>__init__</code>).</p>
+<div id="ca340f0b" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContaBancaria:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    banco <span class="op">=</span> <span class="st">"Banco Python"</span>   <span class="co"># atributo de CLASSE (compartilhado por todos)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titular, saldo<span class="op">=</span><span class="dv">0</span>):  <span class="co"># método construtor</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.titular <span class="op">=</span> titular  <span class="co"># atributo de INSTÂNCIA (específico do objeto)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.saldo   <span class="op">=</span> saldo    <span class="co"># atributo de INSTÂNCIA (específico do objeto)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="instanciando-classe" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="instanciando-classe"><span class="header-section-number">8.4</span> Instanciando uma classe</h2>
+<p>Para <strong>criar um objeto</strong>, chame o nome da classe com os argumentos necessários (<code>self</code> é preenchido automaticamente pelo Python). Depois, acesse atributos com a <strong>notação de ponto</strong> (<code>.</code>).</p>
+<p>Objetos são <strong>mutáveis por padrão</strong>: você pode alterar um atributo após a criação.</p>
+<div id="b2d17751" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>c1 <span class="op">=</span> ContaBancaria(<span class="st">"João Silva"</span>, <span class="dv">1500</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>c2 <span class="op">=</span> ContaBancaria(<span class="st">"Maria Santos"</span>, <span class="dv">3200</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Atributos de instância: variam por objeto</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c1.titular)  <span class="co"># João Silva</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c1.saldo)    <span class="co"># 1500</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Atributo de classe: igual em todos os objetos</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c1.banco)    <span class="co"># Banco Python</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c2.banco)    <span class="co"># Banco Python</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Objetos são mutáveis: atributos podem ser alterados após a criação</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>c1.saldo <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c1.saldo)    <span class="co"># 2000</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>João Silva
+1500
+Banco Python
+Banco Python
+2000</code></pre>
+</div>
+</div>
+</section>
+<section id="metodos-instancia" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="metodos-instancia"><span class="header-section-number">8.5</span> Métodos de instância</h2>
+<p><strong>Métodos de instância</strong> são funções definidas dentro de uma classe que operam sobre o objeto. Como <code>__init__</code>, seu primeiro parâmetro é sempre <code>self</code>.</p>
+<div id="dd244f6d" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContaBancaria:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    banco <span class="op">=</span> <span class="st">"Banco Python"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titular, saldo<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.titular <span class="op">=</span> titular</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.saldo   <span class="op">=</span> saldo</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> depositar(<span class="va">self</span>, valor):</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.saldo <span class="op">+=</span> valor</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">: depósito de R$ </span><span class="sc">{</span>valor<span class="sc">:,.2f}</span><span class="ss"> | saldo: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> sacar(<span class="va">self</span>, valor):</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> valor <span class="op">&gt;</span> <span class="va">self</span>.saldo:</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Saldo insuficiente! Saldo atual: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.saldo <span class="op">-=</span> valor</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">: saque de R$ </span><span class="sc">{</span>valor<span class="sc">:,.2f}</span><span class="ss"> | saldo: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>c1 <span class="op">=</span> ContaBancaria(<span class="st">"João Silva"</span>, <span class="dv">1000</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>c1.depositar(<span class="dv">500</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>c1.sacar(<span class="dv">200</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>c1.sacar(<span class="dv">2000</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>João Silva: depósito de R$ 500.00 | saldo: R$ 1,500.00
+João Silva: saque de R$ 200.00 | saldo: R$ 1,300.00
+Saldo insuficiente! Saldo atual: R$ 1,300.00</code></pre>
+</div>
+</div>
+<section id="métodos-especiais-dunder-methods" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="métodos-especiais-dunder-methods"><span class="header-section-number">8.5.1</span> Métodos especiais (<em>dunder methods</em>)</h3>
+<p>Métodos com duplo sublinhado (<code>__nome__</code>) são chamados de <strong>dunder methods</strong> (<em>double underscore</em>). Eles permitem que os objetos se integrem naturalmente ao Python — em impressão, comparação, aritmética e muito mais.</p>
+<p>O mais útil para visualização é <code>__str__</code>, chamado automaticamente por <code>print()</code>. Sem ele, imprimir um objeto exibe o endereço de memória:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c1)   <span class="co"># &lt;__main__.ContaBancaria object at 0x...&gt;</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Com <code>__str__</code>, controlamos exatamente o que é exibido:</p>
+<div id="7c93f273" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContaBancaria:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    banco <span class="op">=</span> <span class="st">"Banco Python"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titular, saldo<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.titular <span class="op">=</span> titular</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.saldo   <span class="op">=</span> saldo</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"ContaBancaria(</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">, saldo=R$</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">)"</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> depositar(<span class="va">self</span>, valor):</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.saldo <span class="op">+=</span> valor</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">: depósito de R$ </span><span class="sc">{</span>valor<span class="sc">:,.2f}</span><span class="ss"> | saldo: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> sacar(<span class="va">self</span>, valor):</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> valor <span class="op">&gt;</span> <span class="va">self</span>.saldo:</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Saldo insuficiente! Saldo atual: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.saldo <span class="op">-=</span> valor</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">: saque de R$ </span><span class="sc">{</span>valor<span class="sc">:,.2f}</span><span class="ss"> | saldo: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>c1 <span class="op">=</span> ContaBancaria(<span class="st">"João Silva"</span>, <span class="dv">1000</span>)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>c1.depositar(<span class="dv">500</span>)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c1)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>João Silva: depósito de R$ 500.00 | saldo: R$ 1,500.00
+ContaBancaria(João Silva, saldo=R$1,500.00)</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="tipos-embutidos" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="tipos-embutidos"><span class="header-section-number">8.6</span> Os tipos embutidos são classes</h2>
+<p>Embora não tenhamos mencionado explicitamente antes, usamos classes e objetos ao longo de <strong>todo</strong> este curso. Os <strong>tipos básicos</strong> do Python são, na verdade, <strong>classes</strong>. Cada valor que criamos é um <strong>objeto</strong> — uma instância dessas classes:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Classe</th>
+<th>Exemplos de métodos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Inteiro</td>
+<td><code>int</code></td>
+<td><code>abs(-5)</code>, <code>int("42")</code></td>
+</tr>
+<tr class="even">
+<td>Texto</td>
+<td><code>str</code></td>
+<td><code>"olá".upper()</code>, <code>"olá".split()</code></td>
+</tr>
+<tr class="odd">
+<td>Lista</td>
+<td><code>list</code></td>
+<td><code>lista.append(x)</code>, <code>lista.sort()</code></td>
+</tr>
+<tr class="even">
+<td>Dicionário</td>
+<td><code>dict</code></td>
+<td><code>d.keys()</code>, <code>d.values()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Quando escrevemos <code>lista.append(item)</code>, estamos chamando o <strong>método</strong> <code>append()</code> de um objeto da classe <code>list</code> — exatamente como chamamos <code>c1.depositar(500)</code> acima. A função <code>type()</code> revela a classe de qualquer objeto:</p>
+<div id="49852fd2" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">50</span>))        <span class="co"># &lt;class 'int'&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">"python"</span>))  <span class="co"># &lt;class 'str'&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>([]))        <span class="co"># &lt;class 'list'&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>({}))        <span class="co"># &lt;class 'dict'&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(c1))        <span class="co"># &lt;class '__main__.ContaBancaria'&gt;</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'str'&gt;
+&lt;class 'list'&gt;
+&lt;class 'dict'&gt;
+&lt;class '__main__.ContaBancaria'&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="heranca" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="heranca"><span class="header-section-number">8.7</span> Herança</h2>
+<p><strong>Herança</strong> é o processo pelo qual uma classe adquire os atributos e métodos de outra. A classe original é chamada de <strong>classe pai</strong> (ou base); a nova é chamada de <strong>subclasse</strong> (ou filha).</p>
+<p>Para criar uma subclasse, basta colocar o nome da classe pai entre parênteses:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ClassePai:</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    banco <span class="op">=</span> <span class="st">"Banco Python"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ClasseFilha(ClassePai):</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ClasseFilha.banco)   <span class="co"># Banco Python — herdado!</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="exemplo-tipos-de-conta" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="exemplo-tipos-de-conta"><span class="header-section-number">8.7.1</span> Exemplo: tipos de conta</h3>
+<p>Contas-correntes e contas-poupança compartilham as características de uma <code>ContaBancaria</code>: titular e saldo. Mas cada tipo tem comportamentos distintos:</p>
+<ul>
+<li><code>ContaCorrente</code>: permite saque além do saldo (cheque especial com limite)</li>
+<li><code>ContaPoupanca</code>: acumula rendimento mensal sobre o saldo</li>
+</ul>
+<p>A solução é criar subclasses. Abaixo está a classe base que usaremos:</p>
+<div id="1f2a1f2c" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContaBancaria:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    banco <span class="op">=</span> <span class="st">"Banco Python"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titular, saldo<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.titular <span class="op">=</span> titular</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.saldo   <span class="op">=</span> saldo</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> depositar(<span class="va">self</span>, valor):</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.saldo <span class="op">+=</span> valor</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">: depósito de R$ </span><span class="sc">{</span>valor<span class="sc">:,.2f}</span><span class="ss"> | saldo: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> sacar(<span class="va">self</span>, valor):</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> valor <span class="op">&gt;</span> <span class="va">self</span>.saldo:</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Saldo insuficiente! Saldo atual: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.saldo <span class="op">-=</span> valor</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">: saque de R$ </span><span class="sc">{</span>valor<span class="sc">:,.2f}</span><span class="ss"> | saldo: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"ContaBancaria(</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">, saldo=R$</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">)"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="classes-pai-e-classes-filha" class="level3" data-number="8.7.2">
+<h3 data-number="8.7.2" class="anchored" data-anchor-id="classes-pai-e-classes-filha"><span class="header-section-number">8.7.2</span> Classes pai e classes filha</h3>
+<p>Subclasses herdam todos os atributos e métodos da classe pai, mas podem <strong>sobrescrever</strong> métodos ou <strong>adicionar</strong> novos comportamentos.</p>
+<p>Para reaproveitar a lógica já escrita na classe pai (e não duplicar código), usamos <code>super()</code> — que delega a chamada ao método da classe pai. Assim, se o comportamento mudar em <code>ContaBancaria</code>, as subclasses se beneficiam automaticamente.</p>
+<div id="6a787bab" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContaCorrente(ContaBancaria):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titular, saldo<span class="op">=</span><span class="dv">0</span>, limite<span class="op">=</span><span class="dv">500</span>):</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(titular, saldo)  <span class="co"># reutiliza __init__ da classe pai</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.limite <span class="op">=</span> limite              <span class="co"># atributo novo</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> sacar(<span class="va">self</span>, valor):               <span class="co"># sobrescreve: permite saque com limite</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> valor <span class="op">&gt;</span> <span class="va">self</span>.saldo <span class="op">+</span> <span class="va">self</span>.limite:</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Limite excedido! Valor disponível: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo <span class="op">+</span> <span class="va">self</span><span class="sc">.</span>limite<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.saldo <span class="op">-=</span> valor</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">: saque de R$ </span><span class="sc">{</span>valor<span class="sc">:,.2f}</span><span class="ss"> | saldo: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"ContaCorrente(</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">, saldo=R$</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">, limite=R$</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>limite<span class="sc">:,.2f}</span><span class="ss">)"</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContaPoupanca(ContaBancaria):</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    taxa_rendimento <span class="op">=</span> <span class="fl">0.005</span>  <span class="co"># 0,5% ao mês (atributo de classe)</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> render(<span class="va">self</span>, meses<span class="op">=</span><span class="dv">1</span>):  <span class="co"># método novo</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        saldo_inicial <span class="op">=</span> <span class="va">self</span>.saldo</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.saldo <span class="op">*=</span> (<span class="dv">1</span> <span class="op">+</span> <span class="va">self</span>.taxa_rendimento) <span class="op">**</span> meses</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>        rendimento <span class="op">=</span> <span class="va">self</span>.saldo <span class="op">-</span> saldo_inicial</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">: rendimento de R$ </span><span class="sc">{</span>rendimento<span class="sc">:,.2f}</span><span class="ss"> em </span><span class="sc">{</span>meses<span class="sc">}</span><span class="ss"> meses | saldo: R$ </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">"</span>)</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"ContaPoupanca(</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titular<span class="sc">}</span><span class="ss">, saldo=R$</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>saldo<span class="sc">:,.2f}</span><span class="ss">)"</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>joao  <span class="op">=</span> ContaCorrente(<span class="st">"João"</span>, <span class="dv">1000</span>)</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>maria <span class="op">=</span> ContaPoupanca(<span class="st">"Maria"</span>, <span class="dv">3000</span>)</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>joao.depositar(<span class="dv">200</span>)   <span class="co"># depositar() herdado de ContaBancaria</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>joao.sacar(<span class="dv">1400</span>)      <span class="co"># sacar() sobrescrito — usa limite</span></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>joao.sacar(<span class="dv">1400</span>)      <span class="co"># limite excedido</span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>maria.depositar(<span class="dv">500</span>)</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>maria.render(<span class="dv">5</span>)       <span class="co"># render() próprio de ContaPoupanca</span></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a><span class="co"># isinstance() verifica a hierarquia de herança</span></span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(joao, ContaCorrente))  <span class="co"># True</span></span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(joao, ContaBancaria))  <span class="co"># True — herda de ContaBancaria!</span></span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(joao, ContaPoupanca))  <span class="co"># False</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>João: depósito de R$ 200.00 | saldo: R$ 1,200.00
+João: saque de R$ 1,400.00 | saldo: R$ -200.00
+Limite excedido! Valor disponível: R$ 300.00
+
+Maria: depósito de R$ 500.00 | saldo: R$ 3,500.00
+Maria: rendimento de R$ 88.38 em 5 meses | saldo: R$ 3,588.38
+
+True
+True
+False</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="polimorfismo" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="polimorfismo"><span class="header-section-number">8.8</span> Polimorfismo</h2>
+<p><strong>Polimorfismo</strong> significa que objetos de classes diferentes respondem ao <strong>mesmo método</strong> de formas distintas. Em Python, isso acontece naturalmente quando subclasses sobrescrevem métodos da classe pai — o Python sempre chama a versão mais específica do objeto.</p>
+<p><code>ContaBancaria</code>, <code>ContaCorrente</code> e <code>ContaPoupanca</code> todas implementam <code>__str__()</code>, mas cada uma retorna uma representação diferente:</p>
+<div id="85015f4d" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>contas <span class="op">=</span> [</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    ContaBancaria(<span class="st">"Ana Silva"</span>, <span class="dv">500</span>),</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    ContaCorrente(<span class="st">"Bruno Lima"</span>, <span class="dv">800</span>, limite<span class="op">=</span><span class="dv">1000</span>),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    ContaPoupanca(<span class="st">"Carla Souza"</span>, <span class="dv">5000</span>),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># O Python chama o __str__() correto para cada objeto automaticamente</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> conta <span class="kw">in</span> contas:</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(conta)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ContaBancaria(Ana Silva, saldo=R$500.00)
+ContaCorrente(Bruno Lima, saldo=R$800.00, limite=R$1,000.00)
+ContaPoupanca(Carla Souza, saldo=R$5,000.00)</code></pre>
+</div>
+</div>
+</section>
+<section id="aplicacao-solow" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="aplicacao-solow"><span class="header-section-number">8.9</span> Aplicação: Modelo de Solow</h2>
+<p>O <strong>Modelo de Solow</strong> descreve como o capital por trabalhador <span class="math inline">\(k_t\)</span> evolui ao longo do tempo em direção a um <strong>estado estacionário</strong> <span class="math inline">\(k^*\)</span>.</p>
+<p>A dinâmica é dada pela equação de acumulação de capital:</p>
+<p><span class="math display">\[k_{t+1} = s \cdot f(k_t) + (1 - \delta - n) \cdot k_t\]</span></p>
+<p>onde <span class="math inline">\(f(k) = k^\alpha\)</span> é a função de produção Cobb-Douglas, <span class="math inline">\(s\)</span> é a taxa de poupança, <span class="math inline">\(\delta\)</span> é a taxa de depreciação e <span class="math inline">\(n\)</span> é a taxa de crescimento populacional. O estado estacionário satisfaz <span class="math inline">\(k_{t+1} = k_t = k^*\)</span>:</p>
+<p><span class="math display">\[k^* = \left(\frac{s}{\delta + n}\right)^{\frac{1}{1-\alpha}}\]</span></p>
+<p>Com POO, encapsulamos toda a lógica em uma classe <code>ModeloSolow</code>:</p>
+<ul>
+<li>Os <strong>parâmetros</strong> são <strong>atributos</strong> — facilitando comparar economias com diferentes configurações.</li>
+<li>As <strong>equações</strong> são <strong>métodos</strong> — <code>producao()</code>, <code>atualizar()</code>, <code>estado_estacionario()</code>.</li>
+<li>O <strong>histórico</strong> da simulação é armazenado no próprio objeto, pronto para visualização.</li>
+</ul>
+<div id="35a1ec76" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ModeloSolow:</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Modelo de Crescimento de Solow.</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Parâmetros</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co">    s     : taxa de poupança</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co">    delta : taxa de depreciação</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co">    n     : taxa de crescimento populacional</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co">    alpha : elasticidade do capital na produção</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co">    k0    : capital inicial por trabalhador</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, s<span class="op">=</span><span class="fl">0.2</span>, delta<span class="op">=</span><span class="fl">0.1</span>, n<span class="op">=</span><span class="dv">0</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, k0<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.s, <span class="va">self</span>.delta, <span class="va">self</span>.n <span class="op">=</span> s, delta, n</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.alpha                 <span class="op">=</span> alpha</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.k                     <span class="op">=</span> k0</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.historia              <span class="op">=</span> [k0]</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> producao(<span class="va">self</span>, k):</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Função de produção Cobb-Douglas: y = k^alpha."""</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> k<span class="op">**</span><span class="va">self</span>.alpha</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> atualizar(<span class="va">self</span>):</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Atualiza o capital para o próximo período."""</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>        y      <span class="op">=</span> <span class="va">self</span>.producao(<span class="va">self</span>.k)</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.k <span class="op">=</span> <span class="va">self</span>.s <span class="op">*</span> y <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> <span class="va">self</span>.delta <span class="op">-</span> <span class="va">self</span>.n) <span class="op">*</span> <span class="va">self</span>.k</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.historia.append(<span class="va">self</span>.k)</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> simular(<span class="va">self</span>, T<span class="op">=</span><span class="dv">100</span>):</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Simula T períodos."""</span></span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(T):</span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.atualizar()</span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> estado_estacionario(<span class="va">self</span>):</span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Calcula o estado estacionário teórico."""</span></span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="va">self</span>.s <span class="op">/</span> (<span class="va">self</span>.n <span class="op">+</span> <span class="va">self</span>.delta))<span class="op">**</span>(<span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> <span class="va">self</span>.alpha))</span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="ss">f"ModeloSolow(s=</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>s<span class="sc">}</span><span class="ss">, delta=</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>delta<span class="sc">}</span><span class="ss">, n=</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>n<span class="sc">}</span><span class="ss">, "</span></span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>                <span class="ss">f"alpha=</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>alpha<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>economia1 <span class="op">=</span> ModeloSolow(s<span class="op">=</span><span class="fl">0.25</span>, delta<span class="op">=</span><span class="fl">0.1</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>economia2 <span class="op">=</span> ModeloSolow(s<span class="op">=</span><span class="fl">0.35</span>, delta<span class="op">=</span><span class="fl">0.1</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)  <span class="co"># taxa de poupança maior</span></span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a>economia1.simular(T<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a>economia2.simular(T<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(economia1)</span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Capital inicial:        </span><span class="sc">{</span>economia1<span class="sc">.</span>historia[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Capital final:          </span><span class="sc">{</span>economia1<span class="sc">.</span>k<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Estado estacionário k*: </span><span class="sc">{</span>economia1<span class="sc">.</span>estado_estacionario()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(economia2)</span>
+<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Capital inicial:        </span><span class="sc">{</span>economia2<span class="sc">.</span>historia[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Capital final:          </span><span class="sc">{</span>economia2<span class="sc">.</span>k<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Estado estacionário k*: </span><span class="sc">{</span>economia2<span class="sc">.</span>estado_estacionario()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a>ax.plot(economia1.historia, label<span class="op">=</span><span class="st">"Economia 1: $k_t$"</span>)</span>
+<span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a>ax.plot(economia2.historia, label<span class="op">=</span><span class="st">"Economia 2: $k_t$"</span>)</span>
+<span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a>ax.axhline(economia1.estado_estacionario(), color<span class="op">=</span><span class="st">"C0"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb21-65"><a href="#cb21-65" aria-hidden="true" tabindex="-1"></a>ax.axhline(economia2.estado_estacionario(), color<span class="op">=</span><span class="st">"C1"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, alpha<span class="op">=</span><span class="fl">0.6</span>,</span>
+<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a>           label<span class="op">=</span><span class="st">"Estado estacionário $k^*$"</span>)</span>
+<span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Convergência do capital no Modelo de Solow"</span>)</span>
+<span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Período"</span>)</span>
+<span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Capital por trabalhador ($k$)"</span>)</span>
+<span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ModeloSolow(s=0.25, delta=0.1, n=0, alpha=0.3)
+Capital inicial:        1.0000
+Capital final:          3.7001
+Estado estacionário k*: 3.7024
+
+ModeloSolow(s=0.35, delta=0.1, n=0, alpha=0.3)
+Capital inicial:        1.0000
+Capital final:          5.9830
+Estado estacionário k*: 5.9874</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="poo_files/figure-html/cell-12-output-2.png" width="755" height="372" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exercícios" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="exercícios"><span class="header-section-number">8.10</span> Exercícios</h2>
+<ol type="1">
+<li><p>Crie uma classe <code>Pais</code> com os atributos <code>nome</code>, <code>pib_per_capita</code> (em US$) e <code>inflacao</code> (em %). Adicione:</p>
+<ul>
+<li>Um método <code>__str__</code> que exiba as informações formatadas.</li>
+<li>Um método <code>taxa_real(taxa_nominal)</code> que calcule a taxa de juros real pela Equação de Fisher.</li>
+<li>Validação no construtor: <code>pib_per_capita</code> deve ser positivo e <code>inflacao</code> deve ser um número.</li>
+<li>Um <code>@classmethod</code> <code>do_dicionario(cls, dados)</code> que crie um <code>Pais</code> a partir de um dicionário.</li>
+</ul>
+<p>Instancie pelo menos 3 países e exiba os resultados.</p></li>
+<li><p>Crie uma classe <code>SerieTemporalEconomica</code> para armazenar uma série de dados (ex: IPCA mensal). A classe deve ter:</p>
+<ul>
+<li>Atributos: <code>nome</code> (str), <code>unidade</code> (str, ex: <code>"%"</code>), <code>valores</code> (lista de floats).</li>
+<li>Propriedades calculadas: <code>media</code>, <code>minimo</code>, <code>maximo</code>, <code>amplitude</code>.</li>
+<li>Método <code>acumulado()</code> que calcule o valor acumulado usando a fórmula de produto: <span class="math inline">\(\prod(1 + v_i/100) - 1\)</span>.</li>
+<li>Método <code>__len__</code> que retorne o número de observações.</li>
+<li>Método <code>__add__</code> que concatene duas séries (retorne uma nova <code>SerieTemporalEconomica</code> com os valores combinados).</li>
+</ul></li>
+<li><p>Crie uma hierarquia de classes para instrumentos de renda fixa:</p>
+<ul>
+<li>Classe base <code>RendaFixa</code> com atributos <code>nome</code>, <code>valor_inicial</code> e <code>taxa_anual</code>.</li>
+<li>Classe filha <code>CDB</code> que herda de <code>RendaFixa</code> e adiciona <code>banco</code> e <code>liquidez_diaria</code> (bool).</li>
+<li>Classe filha <code>TesouroDireto</code> que herda de <code>RendaFixa</code> e adiciona <code>tipo</code> (LTN, LFT etc.) e <code>vencimento</code>.</li>
+<li>Ambas devem ter um método <code>valor_futuro(anos)</code> que calcule o montante com juros compostos.</li>
+<li>Implemente <code>__str__</code> em cada classe.</li>
+</ul>
+<p>Crie instâncias de ambas e compare seus valores futuros em 3 anos.</p></li>
+<li><p>Estenda a classe <code>ModeloSolow</code> com os seguintes recursos:</p>
+<ul>
+<li>Um método <code>__lt__(self, other)</code> que compare dois modelos pelo estado estacionário <span class="math inline">\(k^*\)</span> (o modelo com menor <span class="math inline">\(k^*\)</span> é “menor”).</li>
+<li>Um método <code>__repr__</code> que retorne uma string que permita recriar o objeto.</li>
+</ul>
+<p>Crie três modelos com parâmetros diferentes e ordene-os com <code>sorted()</code>.</p></li>
+<li><p>Crie uma classe <code>EconomiaMundo</code> que receba uma lista de objetos <code>ModeloSolow</code> e implemente:</p>
+<ul>
+<li>Método <code>resumo()</code> que imprima uma tabela com os parâmetros e o <span class="math inline">\(k^*\)</span> de cada modelo.</li>
+<li>Método <code>filtrar_poupanca(s_min)</code> que retorne apenas os modelos com taxa de poupança acima de <code>s_min</code>.</li>
+<li>Método <code>convergencia_mais_rapida()</code> que retorne o modelo que atinge 95% do seu <span class="math inline">\(k^*\)</span> em menos períodos.</li>
+</ul></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./regex.html" class="pagination-link" aria-label="Expressões Regulares">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Expressões Regulares</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Arthur Viaro · Departamento de Economia · FEA-USP</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/arthurviaro/eae1106/issues/new" class="toc-action"><i class="bi bi-github"></i>Criar uma issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>EAE1106 - Métodos Computacionais para Economia</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

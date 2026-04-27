@@ -244,6 +244,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Expressões Regulares</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./poo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -487,7 +493,7 @@ window.Quarto = {
 <section id="instruções-if" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="instruções-if"><span class="header-section-number">4.1.2</span> Instruções <code>if</code></h3>
 <p>Para escrever programas úteis, quase sempre precisamos da capacidade de verificar condições e alterar o comportamento do programa de acordo com elas. As <strong>instruções condicionais</strong> nos dão essa capacidade. A forma mais simples é a instrução <code>if</code>. Vamos começar com o seguinte exemplo:</p>
-<div id="d776ff01" class="cell" data-execution_count="1">
+<div id="ffd8bf4f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de x? "</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de y? "</span>))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -500,7 +506,7 @@ window.Quarto = {
 <section id="controle-de-fluxo-elif-e-else" class="level3" data-number="4.1.3">
 <h3 data-number="4.1.3" class="anchored" data-anchor-id="controle-de-fluxo-elif-e-else"><span class="header-section-number">4.1.3</span> Controle de Fluxo: <code>elif</code> e <code>else</code></h3>
 <p>Uma instrução <code>if</code> pode ter uma segunda parte, chamada de cláusula <code>else</code>. A sintaxe é a seguinte:</p>
-<div id="46ed6107" class="cell" data-execution_count="2">
+<div id="e8df687b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de x? "</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de y? "</span>))</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -515,7 +521,7 @@ window.Quarto = {
 <p>Nosso código pode ser representado da seguinte forma:</p>
 <p><img src="./images/controle-fluxo-01.png" alt="Controle de fluxo" width="20%"></p>
 <p>Este programa pode ser melhorado evitando fazer três verificações consecutivas. Afinal, nem todas as três condições podem ser verdadeiras ao mesmo tempo!</p>
-<div id="4f53066e" class="cell" data-execution_count="3">
+<div id="577aa82d" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de x? "</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de y? "</span>))</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -531,7 +537,7 @@ window.Quarto = {
 <p><img src="images/controle-fluxo-02.png" alt="Controle de fluxo" width="60%"></p>
 <p>Embora o seu computador talvez não perceba diferença de velocidade entre o primeiro programa e essa versão revisada, considere que um servidor online executando bilhões ou trilhões desse tipo de cálculo todos os dias pode ser impactado até mesmo por uma pequena decisão de programação.</p>
 <p>Há ainda uma melhoria final que podemos fazer no programa. Observe que, logicamente, a verificação <code>elif x == y</code> <strong>não é necessária</strong>. Afinal, se x não é menor que y e x não é maior que y, então x necessariamente deve ser igual a y. Portanto, não precisamos executar <code>elif x == y</code>. Em vez disso, podemos criar um resultado padrão, que será executado caso nenhuma das condições anteriores seja verdadeira, utilizando a instrução <code>else</code>. Podemos revisar o código da seguinte forma:</p>
-<div id="b7bcf0c8" class="cell" data-execution_count="4">
+<div id="3fbc271a" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de x? "</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de y? "</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -548,7 +554,7 @@ window.Quarto = {
 <section id="operador-or" class="level3" data-number="4.1.4">
 <h3 data-number="4.1.4" class="anchored" data-anchor-id="operador-or"><span class="header-section-number">4.1.4</span> Operador <code>or</code></h3>
 <p>O operador <code>or</code> permite que o programa tome uma decisão entre uma ou mais alternativas. Por exemplo, podemos modificar ainda mais o nosso programa da seguinte forma:</p>
-<div id="2491801b" class="cell" data-execution_count="5">
+<div id="635aac2f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de x? "</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de y? "</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -558,7 +564,7 @@ window.Quarto = {
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x é igual a y"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Observe que o resultado do programa permanece o mesmo, mas a complexidade foi reduzida. Com isso, a eficiência do código aumenta. Neste ponto, nosso código já está bastante bom. No entanto, será que o design do programa ainda pode ser melhorado? Podemos modificar nosso código da seguinte forma:</p>
-<div id="cce6afa8" class="cell" data-execution_count="6">
+<div id="d2a6c67f" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de x? "</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de y? "</span>))</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -568,7 +574,7 @@ window.Quarto = {
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x é igual a y"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Observe que removemos completamente o operador <code>or</code> e simplesmente perguntamos: <strong>“x é diferente de y?”</strong>. Assim, fazemos apenas <strong>uma única verificação</strong>, o que torna o código mais eficiente. Para fins de ilustração, também poderíamos modificar nosso código da seguinte forma:</p>
-<div id="412a990d" class="cell" data-execution_count="7">
+<div id="224db62d" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de x? "</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de y? "</span>))</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -583,7 +589,7 @@ window.Quarto = {
 <section id="operador-and" class="level3" data-number="4.1.5">
 <h3 data-number="4.1.5" class="anchored" data-anchor-id="operador-and"><span class="header-section-number">4.1.5</span> Operador <code>and</code></h3>
 <p>Assim como o operador <code>or</code>, o operador <code>and</code> também pode ser utilizado em instruções condicionais. Comece seu novo programa da seguinte forma:</p>
-<div id="dd9e3a24" class="cell" data-execution_count="8">
+<div id="fe93ad7b" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>nota <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Nota: "</span>))</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nota <span class="op">&gt;=</span> <span class="dv">90</span> <span class="kw">and</span> nota <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
@@ -598,7 +604,7 @@ window.Quarto = {
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Conceito: F"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Observe que, ao executar o programa, você poderá inserir uma nota e receber um conceito. No entanto, perceba que ainda existe potencial para erros (bugs). Normalmente, não devemos confiar que os usuários sempre irão inserir informações corretas. Podemos melhorar nosso código da seguinte forma:</p>
-<div id="94c57ec2" class="cell" data-execution_count="9">
+<div id="a066ba36" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nota <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Nota: "</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="dv">90</span> <span class="op">&lt;=</span> nota <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
@@ -613,7 +619,7 @@ window.Quarto = {
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Conceito: F"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Observe como o Python permite encadear operadores e condições de uma maneira pouco comum em muitas outras linguagens de programação. Ainda assim, podemos melhorar ainda mais o nosso programa:</p>
-<div id="cb9d0b85" class="cell" data-execution_count="10">
+<div id="059f7f66" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>nota <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Nota: "</span>))</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nota <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
@@ -632,7 +638,7 @@ window.Quarto = {
 <section id="instrução-match" class="level3" data-number="4.1.6">
 <h3 data-number="4.1.6" class="anchored" data-anchor-id="instrução-match"><span class="header-section-number">4.1.6</span> Instrução <code>match</code></h3>
 <p>Assim como as instruções <code>if</code>, <code>elif</code> e <code>else</code>, as instruções <code>match</code> também podem ser usadas para executar código condicionalmente, dependendo de determinados valores. Considere o seguinte programa:</p>
-<div id="02c4529f" class="cell" data-execution_count="11">
+<div id="2215036f" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>curso <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Qual é o seu curso? "</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> curso <span class="op">==</span> <span class="st">"Economia"</span>:</span>
@@ -647,7 +653,7 @@ window.Quarto = {
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Curso não encontrado"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Observe que as três primeiras instruções condicionais exibem a mesma resposta. Podemos melhorar um pouco esse código utilizando a palavra-chave <code>or</code>:</p>
-<div id="040353f5" class="cell" data-execution_count="12">
+<div id="72b74d0d" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>curso <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Qual é o seu curso? "</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> curso <span class="op">==</span> <span class="st">"Economia"</span> <span class="kw">or</span> curso <span class="op">==</span> <span class="st">"Administração"</span> <span class="kw">or</span> curso <span class="op">==</span> <span class="st">"Contabilidade"</span>:</span>
@@ -658,7 +664,7 @@ window.Quarto = {
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Curso não encontrado"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Observe que o número de instruções <code>elif</code> diminuiu, melhorando a legibilidade do nosso código. Como alternativa, podemos usar instruções <code>match</code> para associar os cursos às unidades da USP. Considere o seguinte código:</p>
-<div id="80349bc7" class="cell" data-execution_count="13">
+<div id="91d735c4" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>curso <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Qual é o seu curso? "</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">match</span> curso:</span>
@@ -674,7 +680,7 @@ window.Quarto = {
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Curso não encontrado"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Observe o uso do símbolo <code>_</code> no último <code>case</code>. Ele corresponde a <strong>qualquer entrada</strong>, resultando em um comportamento semelhante ao de uma instrução <code>else</code>. Uma instrução <code>match</code> compara o valor que aparece após a palavra-chave <code>match</code> com cada um dos valores definidos após as palavras-chave <code>case</code>. Quando uma correspondência é encontrada, o bloco de código indentado correspondente é executado e o programa interrompe as demais verificações. Podemos melhorar o código da seguinte forma:</p>
-<div id="2bf13d68" class="cell" data-execution_count="14">
+<div id="ddae18c0" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>curso <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Qual é o seu curso? "</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">match</span> curso:</span>
@@ -700,12 +706,12 @@ window.Quarto = {
 <section id="repetições-com-while" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="repetições-com-while"><span class="header-section-number">4.2.1</span> Repetições com <code>while()</code></h3>
 <p>O princípio de um loop <code>while</code> é que as instruções dentro do loop serão repetidas enquanto uma determinada condição for verdadeira. A ideia é que essa condição dependa de um ou mais objetos (variáveis) que sejam modificados durante as iterações; caso contrário, o loop se tornaria infinito. A sintaxe é a seguinte:</p>
-<div id="4c41d5cd" class="cell" data-execution_count="15">
+<div id="e2e38825" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> condicao:</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    instrucoes</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Assim como nas instruções condicionais, as instruções devem ser escritas dentro de um <strong>bloco indentado</strong>. Vamos analisar um exemplo de um loop <code>while</code>:</p>
-<div id="f11f4d0b" class="cell" data-execution_count="16">
+<div id="d32e4c35" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">!=</span> <span class="dv">0</span>:</span>
@@ -719,7 +725,7 @@ FEA-USP!</code></pre>
 </div>
 <p>Observe que o código executa corretamente, reduzindo o valor de n em 1 a cada “iteração” do loop. O termo <strong>iteração</strong> tem um significado especial em programação: refere-se a cada ciclo completo de execução do laço. A primeira iteração é chamada de iteração 0, a segunda é a iteração 1, e assim por diante.</p>
 <p>Em programação, normalmente contamos a partir do zero: 0, 1, 2, etc. Compreender o conceito de iteração é fundamental para entender como os laços funcionam e para controlar corretamente o fluxo de repetição em seus programas. Podemos melhorar o nosso código da seguinte maneira:</p>
-<div id="57bb6afb" class="cell" data-execution_count="17">
+<div id="d0abe99a" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="dv">3</span>:</span>
@@ -733,7 +739,7 @@ FEA-USP!</code></pre>
 </div>
 <p>Note que, ao escrevermos <code>i = i + 1</code>, estamos atribuindo à variável <code>i</code> o valor da expressão à direita. No exemplo acima, começamos i em 1, como a maioria das pessoas costuma contar (1, 2, 3…). Se você executar o código acima, verá que ele imprime cinco vezes.</p>
 <p>Entretanto, em programação, é considerado uma boa prática começar a contagem pelo zero. Podemos aprimorar nosso código para iniciar a contagem em zero:</p>
-<div id="17a832d2" class="cell" data-execution_count="18">
+<div id="5c76de42" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">3</span>:</span>
@@ -752,13 +758,13 @@ FEA-USP!</code></pre>
 <section id="repetições-com-for" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="repetições-com-for"><span class="header-section-number">4.2.2</span> Repetições com <code>for()</code></h3>
 <p>Quando sabemos de antemão o número de repetições desejadas, o laço <code>for()</code> é a escolha ideal. Sua sintaxe é simples:</p>
-<div id="2fdded9e" class="cell" data-execution_count="19">
+<div id="f6213a4f" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> objeto <span class="kw">in</span> valores_possiveis:</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    instrucoes</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Nesse contexto, <code>objeto</code> é uma variável local que, a cada iteração, assume um dos valores definidos em <code>valores_possiveis</code>. As <code>instrucoes</code> são os comandos executados em cada repetição do laço.</p>
 <p>O laço <code>for</code> é especialmente útil para percorrer listas, sequências ou qualquer coleção de elementos. Por exemplo, podemos reescrever nosso código anterior da seguinte maneira:</p>
-<div id="e9113809" class="cell" data-execution_count="20">
+<div id="ac0a6c0a" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]:</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"FEA-USP!"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -769,7 +775,7 @@ FEA-USP!</code></pre>
 </div>
 <p>Observe como esse código é mais limpo e fácil de entender em comparação ao exemplo anterior com o loop <code>while</code>. Aqui, a variável <code>i</code> começa em 0, imprime a mensagem, depois recebe 1, imprime novamente, depois recebe 2, imprime mais uma vez e então o laço termina automaticamente.</p>
 <p>Essa abordagem é eficiente para listas pequenas, mas imagine se você precisasse repetir a operação para um milhão de vezes! O ideal é criar códigos que funcionem bem para qualquer quantidade de repetições, tornando-os escaláveis e fáceis de manter. Veja como podemos aprimorar nosso código para esses casos:</p>
-<div id="87e104c4" class="cell" data-execution_count="21">
+<div id="4d78b8d5" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">3</span>):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"FEA-USP!"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -787,7 +793,7 @@ FEA-USP!</code></pre>
 <p>Por exemplo, ao utilizar <code>range(3)</code>, o Python gera automaticamente os valores 0, 1 e 2, permitindo que o laço execute exatamente três vezes sem a necessidade de criar listas manualmente ou controlar variáveis auxiliares.</p>
 <p>Podemos tornar nosso código ainda mais limpo e idiomático. Note que, neste caso, nunca utilizamos a variável <code>i</code> dentro do corpo do laço, apenas a usamos para controlar o número de repetições. Ou seja, embora o Python precise de <code>i</code> para contar as iterações, não precisamos desse valor para nenhuma outra finalidade.</p>
 <p>Em Python, quando a variável de iteração não é utilizada no corpo do laço, é uma boa prática representá-la por um sublinhado (<code>_</code>). Isso deixa claro para quem lê o código que o valor não será usado. Veja como fica:</p>
-<div id="6df198ba" class="cell" data-execution_count="22">
+<div id="9158fc9c" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"FEA-USP!"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -799,14 +805,14 @@ FEA-USP!</code></pre>
 <p>Note que trocar o <code>i</code> por <code>_</code> não altera em nada o funcionamento do nosso programa. Na verdade, usar o sublinhado deixa explícito para quem lê o código que o valor da variável de controle não será utilizado, tornando o código mais claro e profissional.</p>
 <p>Sempre que você precisar apenas repetir uma ação um certo número de vezes, sem se importar com o valor da variável de iteração, prefira usar <code>_</code> no lugar de um nome qualquer. Isso é considerado uma boa prática em Python.</p>
 <p>Outra alternativa interessante é utilizar a multiplicação de strings para repetir uma mensagem várias vezes de forma ainda mais concisa. Veja o exemplo:</p>
-<div id="1ce3aa5a" class="cell" data-execution_count="23">
+<div id="98a3d0a0" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"FEA-USP!"</span> <span class="op">*</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>FEA-USP!FEA-USP!FEA-USP!</code></pre>
 </div>
 </div>
 <p>Note que, ao executar esse código, a mensagem será impressa três vezes, mas o resultado será <code>FEA-USP!FEA-USP!FEA-USP!</code> tudo na mesma linha. Como poderíamos adicionar uma quebra de linha ao final de cada mensagem?</p>
-<div id="5495738e" class="cell" data-execution_count="24">
+<div id="172a2abb" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"FEA-USP!</span><span class="ch">\n</span><span class="st">"</span> <span class="op">*</span> <span class="dv">3</span>, end <span class="op">=</span> <span class="st">""</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>FEA-USP!
@@ -819,7 +825,7 @@ FEA-USP!</code></pre>
 <section id="mais-sobre-listas" class="level3" data-number="4.2.3">
 <h3 data-number="4.2.3" class="anchored" data-anchor-id="mais-sobre-listas"><span class="header-section-number">4.2.3</span> Mais sobre Listas</h3>
 <p>Considere o exemplo a seguir:</p>
-<div id="ffdead8d" class="cell" data-execution_count="25">
+<div id="7c7bf111" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>alunos <span class="op">=</span> [<span class="st">"Ana"</span>, <span class="st">"Pedro"</span>, <span class="st">"Marcos"</span>]</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alunos[<span class="dv">0</span>])</span>
@@ -833,7 +839,7 @@ Marcos</code></pre>
 </div>
 <p>Observe que temos uma lista chamada alunos, contendo os nomes dos estudantes. Em seguida, imprimimos o aluno que está na posição 0, “Ana”. O mesmo é feito para os demais alunos, acessando cada posição da lista individualmente. No entanto, esse método não é prático se a lista for grande ou se não soubermos quantos elementos ela possui.</p>
 <p>Assim como ilustramos anteriormente, podemos usar um laço para percorrer toda a lista de forma automática e eficiente. Para isso, podemos utilizar a função <code>len()</code> para descobrir o tamanho (quantidade de elementos) da lista alunos</p>
-<div id="b70762f5" class="cell" data-execution_count="26">
+<div id="a316e205" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>alunos <span class="op">=</span> [<span class="st">"Ana"</span>, <span class="st">"Pedro"</span>, <span class="st">"Marcos"</span>]</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(alunos)):</span>
@@ -845,7 +851,7 @@ Marcos</code></pre>
 </div>
 </div>
 <p>Outra forma ainda mais simples e legível de percorrer todos os elementos de uma lista é utilizando o próprio nome da variável na estrutura do laço. Veja:</p>
-<div id="250916ea" class="cell" data-execution_count="27">
+<div id="67bd7280" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>alunos <span class="op">=</span> [<span class="st">"Ana"</span>, <span class="st">"Pedro"</span>, <span class="st">"Marcos"</span>]</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> aluno <span class="kw">in</span> alunos:</span>
@@ -866,7 +872,7 @@ Marcos</code></pre>
 <li>Já a instrução <code>break</code> faz com que o Python “quebre” o laço antes de terminar todas as iterações previstas.</li>
 </ul>
 <p>Essas ferramentas são úteis para tratar casos especiais, validar entradas ou evitar cálculos desnecessários dentro de um laço.</p>
-<div id="079d3fca" class="cell" data-execution_count="28">
+<div id="dd9ddc17" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de n? "</span>))</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">0</span>:</span>
@@ -876,7 +882,7 @@ Marcos</code></pre>
 </div>
 <p>No exemplo anterior, continuamos para a próxima iteração do laço quando n é menor que 0 — o que faz com que o usuário seja novamente solicitado a informar “Qual o valor de n?”. Se, por outro lado, n for maior ou igual a 0, saímos do laço e o restante do programa é executado normalmente.</p>
 <p>Note que a palavra-chave <code>continue</code> é redundante neste caso. Podemos melhorar nosso código da seguinte forma:</p>
-<div id="28303922" class="cell" data-execution_count="29">
+<div id="6e74730a" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual o valor de n? "</span>))</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
@@ -914,7 +920,7 @@ Marcos</code></pre>
 </ol>
 <p>Esse experimento permite observar, na prática, como a distribuição das médias amostrais se aproxima de uma normal, mesmo quando os dados originais não seguem esse formato.</p>
 <p>Vamos começar sorteando uma única amostra com 5 observações de uma distribuição uniforme entre 0 e 1:</p>
-<div id="d293018b" class="cell" data-execution_count="30">
+<div id="7a50eead" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>amostra <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span>
@@ -922,12 +928,12 @@ Marcos</code></pre>
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(amostra)</span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.mean(amostra))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[0.43208861 0.86517986 0.16973698 0.03472065 0.77964568]
-0.45627435578926656</code></pre>
+<pre><code>[0.1674395  0.82937307 0.97810313 0.83989287 0.89094823]
+0.7411513584604228</code></pre>
 </div>
 </div>
 <p>Se executarmos esse código novamente, obteremos valores diferentes. Isso acontece porque estamos lidando com números aleatórios. Para tornar os resultados reprodutíveis, utilizamos a função <code>seed</code> do NumPy, que fixa o ponto de partida do gerador de números aleatórios:</p>
-<div id="612c7f8f" class="cell" data-execution_count="31">
+<div id="4bcc9875" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">19</span>)</span>
@@ -942,7 +948,7 @@ Marcos</code></pre>
 </div>
 <p>Note que a média da amostra gerada dificilmente será exatamente igual a 0,5, que é a média teórica da distribuição uniforme <span class="math inline">\(U(0,1)\)</span>. É aqui que entra o Teorema Central do Limite: embora uma única amostra possa apresentar variações, a média das médias amostrais tende a se aproximar da média populacional conforme aumentamos o número de amostras.</p>
 <p>Vamos repetir o experimento várias vezes, gerando diversas amostras de tamanho 5 e calculando suas médias:</p>
-<div id="3b65d707" class="cell" data-execution_count="32">
+<div id="f6d1de82" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">19</span>)   <span class="co"># reprodutibilidade</span></span>
@@ -966,7 +972,7 @@ Marcos</code></pre>
 </div>
 <p>Observe que o valor obtido é muito próximo de 0,5, evidenciando o resultado teórico.</p>
 <p>Podemos aprofundar a análise variando o número de repetições do experimento:</p>
-<div id="e4dd8d37" class="cell" data-execution_count="33">
+<div id="6ad0e86f" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">19</span>)                             <span class="co"># reprodutibilidade</span></span>

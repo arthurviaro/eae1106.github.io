@@ -244,6 +244,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Expressões Regulares</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./poo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Programação Orientada a Objetos</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -349,7 +355,7 @@ window.Quarto = {
 <p>Em praticamente todas as linguagens de programação, o conceito de função é central. Funções permitem organizar o código, reutilizar instruções e estruturar programas de forma clara e modular. De maneira intuitiva, uma função pode ser entendida como uma ação — um “verbo” — que executa uma tarefa específica e, frequentemente, retorna um resultado.</p>
 <p>Toda linguagem já possui um conjunto de funções pré-definidas, chamadas de funções nativas (ou <em>built-in functions</em>). Elas representam operações básicas que o computador já sabe realizar, como exibir algo na tela, converter tipos de dados ou calcular o tamanho de um objeto.</p>
 <p>No nosso primeiro programa, utilizamos a função <code>print</code>. Essa função exibe informações na tela. Ela não imprime um texto fixo; imprime aquilo que for fornecido a ela.</p>
-<div id="de4ddf87" class="cell" data-execution_count="1">
+<div id="46e3889e" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Olá, Mundo"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Olá, Mundo</code></pre>
@@ -367,7 +373,7 @@ window.Quarto = {
 <section id="variáveis" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="variáveis"><span class="header-section-number">3.3.2</span> Variáveis</h3>
 <p>Para que um programa seja dinâmico, precisamos armazenar valores. É aí que entram as variáveis. Uma variável é um nome que se refere a um valor armazenado na memória. Ela funciona como um rótulo que aponta para um objeto. Exemplo:</p>
-<div id="603f2990" class="cell" data-execution_count="2">
+<div id="73e7d838" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>curso <span class="op">=</span> <span class="st">"Métodos Computacionais"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Aqui, <code>curso</code> é a variável, <code>"Métodos Computacionais"</code> é o valor armazenado e <code>=</code> é o operador de atribuição. É importante destacar que, em Python, o símbolo <code>=</code> não significa igualdade matemática, mas sim atribuição.</p>
@@ -380,7 +386,7 @@ window.Quarto = {
 <section id="inteiros-int" class="level3" data-number="3.4.1">
 <h3 data-number="3.4.1" class="anchored" data-anchor-id="inteiros-int"><span class="header-section-number">3.4.1</span> Inteiros (int)</h3>
 <p>O tipo <code>int</code> representa números inteiros: positivos, negativos ou zero. Do ponto de vista matemático, são os elementos do conjunto dos números inteiros.</p>
-<div id="5237e7bf" class="cell" data-execution_count="3">
+<div id="5029af66" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="op">-</span><span class="dv">3</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">+</span> y)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -399,7 +405,7 @@ window.Quarto = {
 <li><code>**</code> potência</li>
 </ul>
 <p>O operador <code>%</code> é especialmente útil em programação. Por exemplo, para verificar se um número é par:</p>
-<div id="3ae7a010" class="cell" data-execution_count="4">
+<div id="eaa104cb" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>)  <span class="co"># True</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -410,7 +416,7 @@ window.Quarto = {
 <section id="pontos-flutuantes-float" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="pontos-flutuantes-float"><span class="header-section-number">3.4.2</span> Pontos Flutuantes (float)</h3>
 <p>O tipo <code>float</code> representa números reais com parte decimal. Por exemplo:</p>
-<div id="cb5e862d" class="cell" data-execution_count="5">
+<div id="cad783c1" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">3.14</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">2.5</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">*</span> y)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -420,14 +426,14 @@ window.Quarto = {
 </div>
 <p>Internamente, esses números são armazenados em formato de <strong>ponto flutuante binário</strong>, o que implica aproximações. Isso significa que certos valores aparentemente simples podem não ser representados de forma exata.</p>
 <p>Por exemplo:</p>
-<div id="cfaf9406" class="cell" data-execution_count="6">
+<div id="12c38ff2" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.30000000000000004</code></pre>
 </div>
 </div>
 <p>Isso não é erro do Python, mas uma limitação da representação binária de números decimais. Para lidar com isso, utilizamos, por exemplo, a função <code>round</code>:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div id="c8db64ba" class="cell" data-execution_count="7">
+<div id="3b526a42" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(<span class="dv">10</span> <span class="op">/</span> <span class="dv">3</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>3.33</code></pre>
@@ -437,7 +443,7 @@ window.Quarto = {
 <section id="strings-str" class="level3" data-number="3.4.3">
 <h3 data-number="3.4.3" class="anchored" data-anchor-id="strings-str"><span class="header-section-number">3.4.3</span> Strings (str)</h3>
 <p>Strings são sequências ordenadas de caracteres. No Python, qualquer valor delimitado por aspas simples ou aspas duplas é considerado um string.</p>
-<div id="3eca55a4" class="cell" data-execution_count="8">
+<div id="3755537e" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>nome <span class="op">=</span> <span class="st">"Arthur"</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nome)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -449,7 +455,7 @@ Economia</code></pre>
 </div>
 </div>
 <p>Podemos ainda utilizar uma sequência de três aspas duplas e escrever strings que percorram várias linhas. Isso é bastante útil na documentação de funções personalizadas, como veremos futuramente.</p>
-<div id="6678ecaf" class="cell" data-execution_count="9">
+<div id="00e06a9e" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="st">Das Utopias</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -481,14 +487,14 @@ Mario Quintana
 <h4 data-number="3.4.3.1" class="anchored" data-anchor-id="formatação-e-o-problemas-das-aspas"><span class="header-section-number">3.4.3.1</span> Formatação e o Problemas das Aspas</h4>
 <p>Observe como adicionar aspas como parte da sua string é um desafio. <code>print("Olá, "amigo"")</code> não funcionará e o interpretador retornará um erro. Geralmente, existem duas abordagens para corrigir isso.</p>
 <p>Primeiro, você poderia simplesmente mudar as aspas para aspas simples.</p>
-<div id="39173f9d" class="cell" data-execution_count="10">
+<div id="b0e4b677" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Olá, "amigo"'</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Olá, "amigo"</code></pre>
 </div>
 </div>
 <p>Uma abordagem mais comum consiste em utilizar o caractere de escape. Por exemplo:</p>
-<div id="f9f58b5e" class="cell" data-execution_count="11">
+<div id="7a5880a5" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Olá, </span><span class="ch">\"</span><span class="st">amigo</span><span class="ch">\"</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Olá, "amigo"</code></pre>
@@ -510,7 +516,7 @@ Mario Quintana
 </ul>
 <p>Em termos gerais, o caractere de escape sinaliza ao interpretador que o próximo símbolo deve receber um tratamento especial, seja para ser exibido literalmente, seja para produzir um efeito específico na formatação do texto.</p>
 <p>Uma maneira mais elegante e moderna de trabalhar com strings é por meio das <code>f-strings</code> (<em>formatted string literals</em>), introduzidas no Python 3.6.</p>
-<div id="50197aa3" class="cell" data-execution_count="12">
+<div id="17599ba0" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>nome <span class="op">=</span> <span class="st">"Arthur"</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Olá, </span><span class="sc">{</span>nome<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -518,21 +524,21 @@ Mario Quintana
 </div>
 </div>
 <p>Observe o <code>f</code> antes das aspas em <code>f"Olá, {nome}"</code>. Esse prefixo informa ao Python que se trata de uma string formatada. Isso permite inserir variáveis ou expressões diretamente dentro da string, entre chaves <code>{}</code>, tornando o código mais legível e natural. Em vez de concatenar:</p>
-<div id="670963a2" class="cell" data-execution_count="13">
+<div id="c741ff59" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Olá, "</span> <span class="op">+</span> nome)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Olá, Arthur</code></pre>
 </div>
 </div>
 <p>ou usar múltiplos argumentos:</p>
-<div id="3d6decac" class="cell" data-execution_count="14">
+<div id="4a2aa841" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Olá,"</span>, nome)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Olá, Arthur</code></pre>
 </div>
 </div>
 <p>a f-string permite escrever a mensagem praticamente como ela será exibida. As f-strings também permitem controlar a forma como números são exibidos.</p>
-<div id="d436f358" class="cell" data-execution_count="15">
+<div id="118cbbfd" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>valor <span class="op">=</span> <span class="dv">20</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>raiz_quadrada <span class="op">=</span> <span class="dv">20</span> <span class="op">**</span> <span class="fl">0.5</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A raiz quadrada de </span><span class="sc">{</span>valor<span class="sc">:d}</span><span class="ss"> é </span><span class="sc">{</span>raiz_quadrada<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -588,7 +594,7 @@ Mario Quintana
 </tr>
 </tbody>
 </table>
-<div id="42897d42" class="cell" data-execution_count="16">
+<div id="657e01d0" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>nome <span class="op">=</span> <span class="st">"Python"</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pega do índice 0 até o 2 (o 2 não entra)</span></span>
@@ -606,7 +612,7 @@ Mario Quintana
 <span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nome[:<span class="op">-</span><span class="dv">2</span>])     <span class="co"># Saída: Pyth</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Você também pode adicionar um terceiro parâmetro: <code>string[início:fim:passo]</code>. O passo determina quantos caracteres o Python deve pular. O Python também permite contar de trás para frente usando números negativos. Note que o -1 é sempre o último caractere.</p>
-<div id="b7cfdce5" class="cell" data-execution_count="17">
+<div id="347384ee" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>telefone <span class="op">=</span> <span class="st">"0123456789"</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pega do 1 ao fim, pulando de 2 em 2</span></span>
@@ -623,7 +629,7 @@ Mario Quintana
 <h4 data-number="3.4.3.3" class="anchored" data-anchor-id="métodos-de-strings"><span class="header-section-number">3.4.3.3</span> Métodos de Strings</h4>
 <p>As strings ilustram bem o conceito de objeto em Python, pois elas vêm acompanhadas de diversos métodos que permitem manipulá-las. Um método pode ser entendido como uma função que pertence a um objeto. Em termos práticos, trata-se de uma sequência de instruções encapsulada em um único comando, que pode receber argumentos e retorna um novo valor. A diferença fundamental é que o método é chamado a partir do próprio objeto, utilizando a notação com ponto: <code>objeto.metodo()</code>.</p>
 <p>No caso das strings, o Python já oferece, de forma nativa, vários métodos úteis para tratamento e limpeza de texto — algo essencial quando trabalhamos com entrada de dados fornecida pelo usuário. Por exemplo, é comum que o usuário digite espaços antes ou depois do nome. O método <code>strip()</code> remove automaticamente quaisquer espaços em branco à esquerda e à direita da string:</p>
-<div id="8b7db908" class="cell" data-execution_count="18">
+<div id="3b207b8b" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>nome <span class="op">=</span> <span class="st">"   Arthur       "</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Olá, </span><span class="sc">{</span>nome<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -637,7 +643,7 @@ Olá, Arthur</code></pre>
 <p>Após essa operação, mesmo que o usuário digite ” Arthur “, a variável nome armazenará apenas”Arthur”.</p>
 <p>Observe que o método retorna uma nova string — ele não altera a string original diretamente. Esse comportamento é consequência do fato de que strings são <strong>imutáveis</strong> em Python.</p>
 <p>Podemos ir além da simples remoção de espaços. Muitas vezes desejamos padronizar a forma como o texto é exibido, especialmente quando lidamos com nomes próprios ou títulos. Por exemplo, o método <code>title()</code> transforma a string para o chamado formato de título, colocando a primeira letra de cada palavra em maiúscula:</p>
-<div id="cc91053e" class="cell" data-execution_count="19">
+<div id="9dc7eb0c" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>curso <span class="op">=</span> <span class="st">"métodos computacionais em economia"</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(curso)</span>
@@ -648,7 +654,7 @@ Métodos Computacionais Em Economia</code></pre>
 </div>
 </div>
 <p>Já os métodos <code>lower()</code> e <code>upper()</code> convertem todos os caracteres para minúsculas e maiúsculas, respectivamente.</p>
-<div id="8683e26b" class="cell" data-execution_count="20">
+<div id="1d41772e" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>curso <span class="op">=</span> <span class="st">"métodos computacionais em economia"</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(curso.lower())</span>
@@ -660,7 +666,7 @@ MÉTODOS COMPUTACIONAIS EM ECONOMIA</code></pre>
 </div>
 <p>Para dividir uma string em partes menores — chamadas substrings — com base em um padrão delimitador (como espaço, vírgula ou outro caractere), utilizamos o método <code>split()</code>. Esse método “quebra” a string sempre que encontra o delimitador especificado e retorna uma lista contendo os trechos resultantes.</p>
 <p>No exemplo a seguir, o espaço <code>" "</code> é utilizado como critério de separação. Sempre que o Python encontra um espaço, ele divide o texto.</p>
-<div id="e0e7cec2" class="cell" data-execution_count="21">
+<div id="b93c92bd" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>curso <span class="op">=</span> <span class="st">"métodos computacionais em economia"</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(curso.split(<span class="st">" "</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -674,7 +680,7 @@ MÉTODOS COMPUTACIONAIS EM ECONOMIA</code></pre>
 <li>novo: texto que será inserido no lugar;</li>
 <li>quantidade (opcional): número máximo de substituições a serem feitas.</li>
 </ul>
-<div id="05a5cb4d" class="cell" data-execution_count="22">
+<div id="d5f6609d" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"Eu gosto de Java"</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(texto) <span class="co"># Saída: Eu gosto de Java</span></span>
@@ -690,7 +696,7 @@ Eu gosto de Python</code></pre>
 <li>O método retorna uma nova string, pois strings são <strong>imutáveis</strong> em Python.</li>
 </ol>
 <p>Podemos controlar quantas ocorrências serão substituídas:</p>
-<div id="4aca847b" class="cell" data-execution_count="23">
+<div id="52bd9804" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>frase <span class="op">=</span> <span class="st">"ha ha ha"</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(frase.replace(<span class="st">"ha"</span>, <span class="st">"he"</span>, <span class="dv">2</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -703,7 +709,7 @@ Eu gosto de Python</code></pre>
 <section id="booleanos-bool" class="level3" data-number="3.4.4">
 <h3 data-number="3.4.4" class="anchored" data-anchor-id="booleanos-bool"><span class="header-section-number">3.4.4</span> Booleanos (bool)</h3>
 <p>O tipo <code>bool</code> é utilizado para representar valores lógicos, isto é, valores que podem assumir apenas dois estados possíveis: <code>True</code> (Verdadeiro) ou <code>False</code> (Falso). Em Python, valores booleanos surgem com frequência como resultado de comparações ou expressões lógicas:</p>
-<div id="e2741bb6" class="cell" data-execution_count="24">
+<div id="e68c7fc5" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span>)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">8</span> <span class="op">&lt;</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -718,7 +724,7 @@ False</code></pre>
 <li>Devem sempre começar com letra maiúscula (<code>True</code>, <code>False</code>).</li>
 <li>São um subtipo de inteiro em Python. Isso significa que: <code>True</code> equivale a numericamente a 1 e <code>False</code> equivale numericamente a 0. Essa característica pode ser útil em operações matemáticas e contagens:</li>
 </ol>
-<div id="a4064643" class="cell" data-execution_count="25">
+<div id="e3a8085d" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="va">True</span> <span class="op">+</span> <span class="va">True</span> <span class="op">+</span> <span class="va">False</span> <span class="op">+</span> <span class="va">True</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -731,14 +737,14 @@ False</code></pre>
 <p>As listas são uma das estruturas de dados mais versáteis do Python. Elas são sequências ordenadas e <strong>mutáveis</strong> que podem armazenar elementos de qualquer tipo: números, strings, objetos ou até outras listas.</p>
 <p>A forma mais comum de criar uma lista é colocar os elementos entre colchetes (<code>[ ]</code>). Um ponto importante é que listas: um inteiro, uma string, um float e até mesmo outra lista.</p>
 <p>Uma lista dentro de outra lista é chamada de lista <strong>aninhada</strong>. Uma lista que não contém elementos é chamada de lista vazia.</p>
-<div id="e9f8ef2d" class="cell" data-execution_count="26">
+<div id="5cda372d" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="op">=</span> [<span class="dv">42</span>, <span class="dv">123</span>, <span class="dv">25</span>]</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>cursos <span class="op">=</span> [<span class="st">"Economia"</span>, <span class="st">"Administração"</span>, <span class="st">"Contabilidade"</span>, <span class="st">"Atuária"</span>]</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>lista_mista <span class="op">=</span> [<span class="dv">42</span>, <span class="st">"Economia"</span>, <span class="fl">3.14</span>, [<span class="dv">10</span>, <span class="dv">20</span>]] <span class="co"># Contém uma lista aninhada</span></span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>lista_vazia <span class="op">=</span> []</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A função <code>len</code> pode ser usada para verificar o tamanho de uma lista, ou seja, quantos elementos ela contém. Note que a função <code>len</code> conta apenas os elementos da lista, não o número total de itens dentro de listas aninhadas:</p>
-<div id="28b50b35" class="cell" data-execution_count="27">
+<div id="88ac1bc0" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(numeros))</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(cursos))</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(lista_mista))</span>
@@ -753,7 +759,7 @@ False</code></pre>
 <section id="operações-com-listas" class="level4" data-number="3.4.5.1">
 <h4 data-number="3.4.5.1" class="anchored" data-anchor-id="operações-com-listas"><span class="header-section-number">3.4.5.1</span> Operações com Listas</h4>
 <p>As listas suportam diversas operações, como: concatenação, repetição, verificação de existência de elementos, soma, obtenção do maior e menor valor, entre outras.</p>
-<div id="d7b5bd75" class="cell" data-execution_count="28">
+<div id="fb0b8425" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenação de listas</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>lista1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>lista2 <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
@@ -787,7 +793,7 @@ True
 <section id="fatiamento-de-listas-slicing" class="level4" data-number="3.4.5.2">
 <h4 data-number="3.4.5.2" class="anchored" data-anchor-id="fatiamento-de-listas-slicing"><span class="header-section-number">3.4.5.2</span> Fatiamento de Listas (Slicing)</h4>
 <p>Assim como strings, as listas também suportam o fatiamento (<em>slicing</em>), permitindo extrair uma subsequência de elementos. A sintaxe é a mesma: <code>lista[início:fim:passo]</code>.</p>
-<div id="d88bbd24" class="cell" data-execution_count="29">
+<div id="b1b9b984" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cursos[<span class="dv">1</span>:<span class="dv">3</span>])</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cursos[:<span class="dv">2</span>])</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cursos[<span class="dv">2</span>:])</span>
@@ -809,7 +815,7 @@ True
 </div>
 </div>
 <p>O acesso a listas aninhadas é feito usando colchetes várias vezes:</p>
-<div id="ea149141" class="cell" data-execution_count="30">
+<div id="abd245c4" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>lista_aninhada <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]]</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista_aninhada[<span class="dv">2</span>])</span>
@@ -828,23 +834,23 @@ True
 <h4 data-number="3.4.5.3" class="anchored" data-anchor-id="mutabilidade-das-listas"><span class="header-section-number">3.4.5.3</span> Mutabilidade das listas</h4>
 <p>Em Python, objetos podem ser <strong>mutáveis</strong> ou <strong>imutáveis</strong>: - <strong>Mutáveis</strong>: podem ser alterados após a criação, sem criar um novo objeto (exemplo: listas). - <strong>Imutáveis</strong>: não podem ser alterados após a criação; qualquer “mudança” cria um novo objeto (exemplo: strings, inteiros, floats).</p>
 <p>Strings são objetos <strong>imutáveis</strong>: não é possível modificar seus caracteres diretamente. Qualquer alteração resulta em uma nova string. Por exemplo, tentar modificar o primeiro caractere de uma string gera um erro:</p>
-<div id="ee75ccd9" class="cell" data-execution_count="31">
+<div id="ec4868cd" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>string <span class="op">=</span> <span class="st">"economia"</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>string[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"E"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[31], line 2</span>
-<span class="ansi-green-fg ansi-bold">      1</span> string <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">economia</span><span style="color:rgb(175,0,0)">"</span>
-<span class="ansi-green-fg">----&gt; 2</span> <span class="ansi-yellow-bg">string</span><span class="ansi-yellow-bg">[</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">0</span><span class="ansi-yellow-bg">]</span> <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">E</span><span style="color:rgb(175,0,0)">"</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[31]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-green-fg">      1</span> string = <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">economia</span><span class="ansi-yellow-fg">"</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-bg">string</span><span class="ansi-yellow-bg">[</span><span class="ansi-green-fg ansi-yellow-bg">0</span><span class="ansi-yellow-bg">]</span> = <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">E</span><span class="ansi-yellow-fg">"</span>
 
 <span class="ansi-red-fg">TypeError</span>: 'str' object does not support item assignment</pre>
 </div>
 </div>
 </div>
 <p>Ao contrário das strings, <strong>listas são mutáveis</strong>, ou seja, seus elementos podem ser alterados diretamente, sem criar um novo objeto. No exemplo abaixo, modificamos os elementos da lista <code>disciplinas</code> de forma direta — a lista permanece o mesmo objeto na memória, mas seu conteúdo é atualizado:</p>
-<div id="b7efd3a0" class="cell" data-execution_count="32">
+<div id="8b2a7c40" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>disciplinas <span class="op">=</span> [<span class="st">"micro"</span>, <span class="st">"macro"</span>, <span class="st">"econometria"</span>, <span class="st">"estatística"</span>]</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(disciplinas)</span>
@@ -859,7 +865,7 @@ Cell <span class="ansi-green-fg">In[31], line 2</span>
 </div>
 </div>
 <p>Note que, ao copiar uma lista, ambas as variáveis passam a apontar para o mesmo objeto na memória. Como listas são mutáveis, qualquer alteração feita em uma delas afeta também a outra, pois ambas compartilham a mesma referência.</p>
-<div id="d9410634" class="cell" data-execution_count="33">
+<div id="4821cb2b" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>lista_original <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>lista_copia <span class="op">=</span> lista_original</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -873,7 +879,7 @@ Cell <span class="ansi-green-fg">In[31], line 2</span>
 </div>
 </div>
 <p>Esse comportamento não ocorre com tipos imutáveis, como inteiros (<code>int</code>). Ao copiar um inteiro para outra variável, cada uma passa a referenciar um valor independente. Alterar uma delas não afeta a outra, pois um novo objeto é criado na memória. Por exemplo:</p>
-<div id="395f8cd3" class="cell" data-execution_count="34">
+<div id="11343118" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">20</span></span>
@@ -895,7 +901,7 @@ Cell <span class="ansi-green-fg">In[31], line 2</span>
 <figcaption>Mario Kart</figcaption>
 </figure>
 </div>
-<div id="2e11d240" class="cell" data-execution_count="35">
+<div id="53125d82" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>resultados <span class="op">=</span> [<span class="st">"Mario"</span>, <span class="st">"Luigi"</span>]</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co"># O método append adiciona um novo elemento ao final da lista</span></span>
@@ -945,7 +951,7 @@ Cell <span class="ansi-green-fg">In[31], line 2</span>
 <h3 data-number="3.4.6" class="anchored" data-anchor-id="tuplas"><span class="header-section-number">3.4.6</span> Tuplas</h3>
 <p>Tuplas são sequências ordenadas de elementos, semelhantes às listas, mas com uma diferença fundamental: <strong>tuplas são imutáveis</strong>. Isso significa que, após sua criação, não é possível alterar, adicionar ou remover elementos de uma tupla. Essa característica torna as tuplas úteis para representar dados que não devem ser modificados, como coordenadas, datas ou pares de valores.</p>
 <p>Para criar uma tupla, basta separar os valores por vírgula, com ou sem parênteses. Podemos, ainda, criar tuplas usando a função <code>tuple()</code>, que converte outros tipos de dados em tuplas.:</p>
-<div id="36d7b1df" class="cell" data-execution_count="36">
+<div id="1e8515d6" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tupla de três números</span></span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(valores))</span>
@@ -978,7 +984,7 @@ Cell <span class="ansi-green-fg">In[31], line 2</span>
 </div>
 </div>
 <p>Cuidado: colocar um valor entre parênteses <strong>não</strong> cria uma tupla. Para criar uma tupla com um único elemento, é necessário incluir uma vírgula após o elemento, com ou sem parênteses. Isso indica ao Python que se trata de uma tupla. Essa sintaxe é importante para evitar erros ao manipular dados, especialmente em situações de desempacotamento ou funções que retornam tuplas.</p>
-<div id="0c187525" class="cell" data-execution_count="37">
+<div id="6f866be4" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> (<span class="st">'a'</span>)</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(t1))</span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -996,7 +1002,7 @@ Cell <span class="ansi-green-fg">In[31], line 2</span>
 <section id="operações-com-tuplas" class="level4" data-number="3.4.6.1">
 <h4 data-number="3.4.6.1" class="anchored" data-anchor-id="operações-com-tuplas"><span class="header-section-number">3.4.6.1</span> Operações com Tuplas</h4>
 <p>A maioria dos operadores de listas também funciona com tuplas. Por exemplo, podemos aplicar as seguintes operações: - indexação (<code>t[i]</code>); - fatiamento (<code>t[i:j:k]</code>); - obtenção de comprimento (<code>len(t)</code>); - concatenação (<code>t1 + t2</code>); - replicação (<code>t * n</code>) - obtenção do valor mínimo (<code>min(t)</code>) e máximo (<code>max(t)</code>)</p>
-<div id="e2d1f784" class="cell" data-execution_count="38">
+<div id="51e053d3" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="bu">tuple</span>(<span class="st">'economia'</span>)</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexação: o operador colchetes ([]) acessa um elemento</span></span>
@@ -1035,7 +1041,7 @@ o
 </div>
 </div>
 <p>Ao contrário das listas, tuplas são <strong>imutáveis</strong>: seus elementos não podem ser alterados após a criação. Qualquer tentativa de modificar uma tupla usando o operador de colchetes resultará em um <code>TypeError</code>.</p>
-<div id="35aed525" class="cell" data-execution_count="39">
+<div id="dec89e30" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tupla imutável</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>t[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span>  <span class="co"># TypeError: 'tuple' object does not support item assignment</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1043,24 +1049,24 @@ o
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[39], line 3</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Tupla imutável</span>
-<span class="ansi-green-fg ansi-bold">      2</span> t <span style="color:rgb(98,98,98)">=</span> (<span style="color:rgb(98,98,98)">1</span>, <span style="color:rgb(98,98,98)">2</span>, <span style="color:rgb(98,98,98)">3</span>)
-<span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg">[</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">0</span><span class="ansi-yellow-bg">]</span> <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(98,98,98)">99</span>  <span style="font-style:italic;color:rgb(95,135,135)"># TypeError: 'tuple' object does not support item assignment</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[39]</span><span class="ansi-green-fg">, line 3</span>
+<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Tupla imutável</span>
+<span class="ansi-green-fg">      2</span> t = (<span class="ansi-green-fg">1</span>, <span class="ansi-green-fg">2</span>, <span class="ansi-green-fg">3</span>)
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">3</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg">[</span><span class="ansi-green-fg ansi-yellow-bg">0</span><span class="ansi-yellow-bg">]</span> = <span class="ansi-green-fg">99</span>  <span style="font-style:italic;color:rgb(95,135,135)"># TypeError: 'tuple' object does not support item assignment</span>
 
 <span class="ansi-red-fg">TypeError</span>: 'tuple' object does not support item assignment</pre>
 </div>
 </div>
 </div>
 <p>Tuplas também <strong>não</strong> possuem métodos para modificar o conteúdo, como <code>append</code> ou <code>remove</code>.</p>
-<div id="1f0ba2d7" class="cell" data-execution_count="40">
+<div id="00606222" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>t.remove(<span class="dv">2</span>) <span class="co"># AttributeError: 'tuple' object has no attribute 'remove'</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[40], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">t</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">remove</span>(<span style="color:rgb(98,98,98)">2</span>) <span style="font-style:italic;color:rgb(95,135,135)"># AttributeError: 'tuple' object has no attribute 'remove'</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[40]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">remove</span>(<span class="ansi-green-fg">2</span>) <span style="font-style:italic;color:rgb(95,135,135)"># AttributeError: 'tuple' object has no attribute 'remove'</span>
 
 <span class="ansi-red-fg">AttributeError</span>: 'tuple' object has no attribute 'remove'</pre>
 </div>
@@ -1071,7 +1077,7 @@ Cell <span class="ansi-green-fg">In[40], line 1</span>
 <h4 data-number="3.4.6.2" class="anchored" data-anchor-id="atribuição-de-tuplas"><span class="header-section-number">3.4.6.2</span> Atribuição de Tuplas</h4>
 <p>A atribuição de tuplas em Python permite distribuir os valores de uma tupla diretamente para múltiplas variáveis, tornando o código mais claro e prático. A ideia básica é atribuir os valores de uma tupla (à direita do operador de atribuição <code>=</code>) para uma tupla de variáveis (à esquerda do <code>=</code>). É fundamental que o número de variáveis à esquerda seja igual ao número de valores à direita do <code>=</code>; caso contrário, ocorre um <code>ValueError</code>.</p>
 <p>De forma mais geral, se o lado esquerdo de uma atribuição for uma tupla, o lado direito pode ser qualquer tipo de sequência — string, lista ou tupla.</p>
-<div id="7b99be5f" class="cell" data-execution_count="41">
+<div id="472c564b" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Atribuição de tuplas</span></span>
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span></span>
 <span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>a, b</span>
@@ -1089,7 +1095,7 @@ Domínio: usp.br</code></pre>
 </div>
 </div>
 <p>No exemplo a seguir, ocorre o desempacotamento dos valores da tupla <code>aluno</code>, atribuindo cada valor a uma variável correspondente do lado esquerdo. Isso torna o código mais legível, facilita o acesso individual aos dados e evita erros de indexação. Esse recurso é muito útil para funções que retornam múltiplos valores, pois permite capturar todos os resultados de forma elegante e organizada, tornando o código mais claro e fácil de manter.</p>
-<div id="fb187ebb" class="cell" data-execution_count="42">
+<div id="d938318b" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>aluno <span class="op">=</span> (<span class="dv">1234567</span>, <span class="st">"Adam Smith"</span>, <span class="dv">20</span>, <span class="st">"Bacharelado em Ciências Econômicas"</span>)</span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>nusp, nome, idade, curso <span class="op">=</span> aluno</span>
 <span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1105,7 +1111,7 @@ Curso: Bacharelado em Ciências Econômicas</code></pre>
 </div>
 </div>
 <p>Atribuição de tuplas é útil quando você deseja trocar os valores de duas variáveis.</p>
-<div id="31076e15" class="cell" data-execution_count="43">
+<div id="b7cccb67" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">20</span></span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Antes da troca: x = </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y = </span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -1121,7 +1127,7 @@ Depois da troca: x = 20, y = 10</code></pre>
 <section id="função-zip" class="level4" data-number="3.4.6.3">
 <h4 data-number="3.4.6.3" class="anchored" data-anchor-id="função-zip"><span class="header-section-number">3.4.6.3</span> Função zip()</h4>
 <p>A função <code>zip</code> é utilizada para combinar duas ou mais sequências (listas, tuplas, etc.) em pares, formando uma nova sequência de tuplas. Se os iteráveis tiverem tamanhos diferentes, o <code>zip</code> para quando o mais curto terminar. É ideal para combinar dados ou criar dicionários. Para separar listas agrupadas, use o operador <code>*</code>.</p>
-<div id="fb10db4f" class="cell" data-execution_count="44">
+<div id="03b8fe86" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combinando listas</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>nomes <span class="op">=</span> [<span class="st">"Ana"</span>, <span class="st">"Bia"</span>, <span class="st">"Caio"</span>]</span>
 <span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>idades <span class="op">=</span> [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">22</span>]</span>
@@ -1155,7 +1161,7 @@ Longitude: (-46.6, -43.2, -41.3)</code></pre>
 <li>Não suportam indexação nem slicing.</li>
 </ul>
 <p>Em Python, conjuntos são definidos por valores separados por vírgulas dentro de chaves <code>{}</code>. No exemplo a seguir, observe que, mesmo repetindo “economia”, o conjunto mantém apenas uma ocorrência.</p>
-<div id="958124a4" class="cell" data-execution_count="45">
+<div id="4680dd3c" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando conjuntos</span></span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> {<span class="st">"economia"</span>, <span class="st">"administração"</span>, <span class="st">"contabilidade"</span>, <span class="st">"economia"</span>}</span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)  <span class="co"># O segundo "economia" será descartado automaticamente</span></span>
@@ -1163,14 +1169,14 @@ Longitude: (-46.6, -43.2, -41.3)</code></pre>
 <span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Conjunto vazio: DEVE usar set(), pois {} cria um dicionário vazio</span></span>
 <span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>vazio <span class="op">=</span> <span class="bu">set</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{'administração', 'contabilidade', 'economia'}</code></pre>
+<pre><code>{'economia', 'administração', 'contabilidade'}</code></pre>
 </div>
 </div>
 <section id="operações-e-métodos" class="level4" data-number="3.4.7.1">
 <h4 data-number="3.4.7.1" class="anchored" data-anchor-id="operações-e-métodos"><span class="header-section-number">3.4.7.1</span> Operações e Métodos</h4>
 <p>Embora os conjuntos sejam mutáveis (podemos adicionar e remover elementos), seus itens precisam ser imutáveis (por exemplo: <code>str</code>, <code>int</code>, <code>float</code>, <code>tuple</code>). Listas e dicionários não podem ser elementos de um set.</p>
 <p>Após a criação de um conjunto, <strong>não</strong> é possível alterar seus elementos. No entanto, é possível adicionar novos elementos usando o método <code>add()</code>. Note que, se o elemento já estiver presente no conjunto, ele não será adicionado novamente.</p>
-<div id="af670e20" class="cell" data-execution_count="46">
+<div id="3102736e" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionar elementos usando o método add()</span></span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>s.add(<span class="st">"atuária"</span>)</span>
 <span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)</span>
@@ -1179,21 +1185,21 @@ Longitude: (-46.6, -43.2, -41.3)</code></pre>
 <span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>s.add(<span class="st">"economia"</span>)</span>
 <span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{'administração', 'contabilidade', 'economia', 'atuária'}
-{'administração', 'contabilidade', 'economia', 'atuária'}</code></pre>
+<pre><code>{'atuária', 'economia', 'administração', 'contabilidade'}
+{'atuária', 'economia', 'administração', 'contabilidade'}</code></pre>
 </div>
 </div>
 <p>Para adicionar múltiplos elementos de uma vez, utilizamos o método <code>update()</code>.</p>
-<div id="e3ab250b" class="cell" data-execution_count="47">
+<div id="be5b12af" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionar múltiplos elementos usando o método update()</span></span>
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>s.update([<span class="st">'EAE'</span>, <span class="st">'EAD'</span>, <span class="st">'EAC'</span>])</span>
 <span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{'contabilidade', 'economia', 'EAD', 'EAC', 'atuária', 'administração', 'EAE'}</code></pre>
+<pre><code>{'EAE', 'contabilidade', 'economia', 'EAC', 'atuária', 'administração', 'EAD'}</code></pre>
 </div>
 </div>
 <p>Para remover elementos do conjunto, podemos usar os métodos <code>remove()</code> ou <code>discard()</code>. A diferença é que <code>remove()</code> gera um erro se o elemento não estiver presente, enquanto <code>discard()</code> não.</p>
-<div id="683334cb" class="cell" data-execution_count="48">
+<div id="4e182836" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remover elementos usando o método remove()</span></span>
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>s.remove(<span class="st">"EAE"</span>)</span>
 <span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)</span>
@@ -1204,25 +1210,25 @@ Longitude: (-46.6, -43.2, -41.3)</code></pre>
 <span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Isso não causará um erro, mesmo se "EAE" não estiver presente</span></span>
 <span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a>s.discard(<span class="st">"EAE"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{'contabilidade', 'economia', 'EAD', 'EAC', 'atuária', 'administração'}</code></pre>
+<pre><code>{'contabilidade', 'economia', 'EAC', 'atuária', 'administração', 'EAD'}</code></pre>
 </div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[48], line 6</span>
-<span class="ansi-green-fg ansi-bold">      3</span> <span style="color:rgb(0,135,0)">print</span>(s)
-<span class="ansi-green-fg ansi-bold">      5</span> <span style="font-style:italic;color:rgb(95,135,135)"># Isso causará um erro, pois "EAE" já foi removido</span>
-<span class="ansi-green-fg">----&gt; 6</span> <span class="ansi-yellow-bg">s</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">remove</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">EAE</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">      8</span> <span style="font-style:italic;color:rgb(95,135,135)"># Isso não causará um erro, mesmo se "EAE" não estiver presente</span>
-<span class="ansi-green-fg ansi-bold">      9</span> s<span style="color:rgb(98,98,98)">.</span>discard(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">EAE</span><span style="color:rgb(175,0,0)">"</span>)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[48]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-green-fg">      3</span> <span style="color:rgb(0,135,0)">print</span>(s)
+<span class="ansi-green-fg">      5</span> <span style="font-style:italic;color:rgb(95,135,135)"># Isso causará um erro, pois "EAE" já foi removido</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">6</span> <span class="ansi-yellow-bg">s</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">remove</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">EAE</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">      8</span> <span style="font-style:italic;color:rgb(95,135,135)"># Isso não causará um erro, mesmo se "EAE" não estiver presente</span>
+<span class="ansi-green-fg">      9</span> s.discard(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">EAE</span><span class="ansi-yellow-fg">"</span>)
 
 <span class="ansi-red-fg">KeyError</span>: 'EAE'</pre>
 </div>
 </div>
 </div>
 <p>Mesmo não sendo indexados, conjuntos permitem verificação eficiente de existência usando o operador <code>in</code>. A operação de busca em conjuntos é muito eficiente, sendo uma das grandes vantagens dessa estrutura.</p>
-<div id="9e6fa989" class="cell" data-execution_count="49">
+<div id="6f40b161" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar se um elemento está presente usando o operador in</span></span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'economia'</span> <span class="kw">in</span> s)</span>
 <span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'matemática'</span> <span class="kw">in</span> s)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1245,7 +1251,7 @@ False</code></pre>
 </figure>
 </div>
 <p>A <strong>união</strong> de dois conjuntos resulta em um novo conjunto contendo todos os elementos presentes em pelo menos um dos conjuntos. Em Python, essa operação pode ser realizada com o método <code>.union()</code> ou com o operador <code>|</code>.</p>
-<div id="771e0e63" class="cell" data-execution_count="50">
+<div id="ec692d86" class="cell" data-execution_count="50">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</span>
 <span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1262,7 +1268,7 @@ False</code></pre>
 </div>
 </div>
 <p>A <strong>interseção</strong> de dois conjuntos resulta em um novo conjunto contendo apenas os elementos que estão presentes em ambos. Em Python, essa operação pode ser feita com o método <code>.intersection()</code> ou com o operador <code>&amp;</code>.</p>
-<div id="0ee89cb8" class="cell" data-execution_count="51">
+<div id="fc4a0999" class="cell" data-execution_count="51">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Interseção usando o método intersection()</span></span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>s_intersecao <span class="op">=</span> s1.intersection(s2)</span>
 <span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s_intersecao)</span>
@@ -1276,7 +1282,7 @@ False</code></pre>
 </div>
 </div>
 <p>A <strong>diferença</strong> entre dois conjuntos resulta em um novo conjunto contendo apenas os elementos que estão no primeiro conjunto e não aparecem no segundo. Essa operação é útil para identificar itens exclusivos de um grupo em relação ao outro.</p>
-<div id="66228388" class="cell" data-execution_count="52">
+<div id="d3775353" class="cell" data-execution_count="52">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Diferença usando o método difference()</span></span>
 <span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>s_diferenca <span class="op">=</span> s1.difference(s2)</span>
 <span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s_diferenca)</span>
@@ -1290,7 +1296,7 @@ False</code></pre>
 </div>
 </div>
 <p>A <strong>diferença simétrica</strong> entre dois conjuntos resulta em um novo conjunto contendo todos os elementos que pertencem a apenas um dos conjuntos, ou seja, exclui os elementos que estão em ambos. É útil para identificar itens exclusivos de cada grupo, eliminando os que são compartilhados.</p>
-<div id="99eef94c" class="cell" data-execution_count="53">
+<div id="1a619ef2" class="cell" data-execution_count="53">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Diferença simétrica usando o método symmetric_difference()</span></span>
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>s_diferenca_simetrica <span class="op">=</span> s1.symmetric_difference(s2)</span>
 <span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s_diferenca_simetrica)</span>
@@ -1304,12 +1310,12 @@ False</code></pre>
 </div>
 </div>
 <p>Uma das aplicações mais comuns dos conjuntos (<code>sets</code>) é a remoção de dados duplicados. Para obter elementos distintos, basta converter a lista original utilizando a função <code>set()</code>. Se necessário, o resultado pode ser transformado novamente em lista com <code>list()</code>. Esta abordagem é altamente eficiente, embora não garanta a preservação da ordem original dos elementos.</p>
-<div id="cc3e0d2e" class="cell" data-execution_count="54">
+<div id="96273486" class="cell" data-execution_count="54">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>nomes <span class="op">=</span> [<span class="st">"Ana"</span>, <span class="st">"João"</span>, <span class="st">"Ana"</span>, <span class="st">"Maria"</span>]</span>
 <span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>nomes_unicos <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(nomes))</span>
 <span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nomes_unicos)  <span class="co"># Saída: ['Maria', 'Ana', 'João'] (a ordem não é garantida)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['Maria', 'Ana', 'João']</code></pre>
+<pre><code>['Ana', 'João', 'Maria']</code></pre>
 </div>
 </div>
 </section>
@@ -1328,7 +1334,7 @@ False</code></pre>
 <li><strong>Flexibilidade dos Valores</strong>: Os valores podem ser de qualquer tipo, inclusive listas ou outros dicionários.</li>
 </ol>
 <p>A forma mais comum de declarar um dicionário é utilizando chaves <code>{}</code>. Para declarar um dicionário já preenchido, utilizamos o formato <code>chave: valor</code>, separando os pares por vírgulas dentro das chaves <code>{}</code>. Também é possível criar dicionários usando a função <code>dict()</code>.</p>
-<div id="58dd7e5b" class="cell" data-execution_count="55">
+<div id="d3d15ee9" class="cell" data-execution_count="55">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um dicionário vazio usando chaves</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>alunos <span class="op">=</span> {}</span>
 <span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(alunos))</span>
@@ -1359,7 +1365,7 @@ False</code></pre>
 </div>
 </div>
 <p>Outra forma comum de construir dicionários é a partir de uma lista de tuplas, onde cada tupla atua como um par chave-valor. Além disso, podemos associar duas listas distintas utilizando a função <code>zip()</code> em conjunto com <code>dict()</code>: a primeira lista fornece as chaves e a segunda, os valores correspondentes.</p>
-<div id="a1500b6f" class="cell" data-execution_count="56">
+<div id="17e92299" class="cell" data-execution_count="56">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando uma lista de tuplas para criar um dicionário</span></span>
 <span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>alunos <span class="op">=</span> <span class="bu">dict</span>([</span>
 <span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'nome'</span>, <span class="st">'Arthur'</span>),</span>
@@ -1383,7 +1389,7 @@ False</code></pre>
 <section id="acessando-e-modificando-itens" class="level4" data-number="3.4.8.1">
 <h4 data-number="3.4.8.1" class="anchored" data-anchor-id="acessando-e-modificando-itens"><span class="header-section-number">3.4.8.1</span> Acessando e Modificando Itens</h4>
 <p>Ao contrário das listas e tuplas, que usam índices numéricos para acessar ou modificar elementos (ex: <code>alunos[0]</code>), nos dicionários o acesso, criação ou alteração de valores é feito diretamente pela chave, usando colchetes. Quando tentamos acessar o valor de uma chave que <strong>não existe</strong> no dicionário, o Python gera uma exceção do tipo <code>KeyError</code>.</p>
-<div id="29ef8c41" class="cell" data-execution_count="57">
+<div id="b130badc" class="cell" data-execution_count="57">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar um valor</span></span>
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Nome: </span><span class="sc">{</span>alunos[<span class="st">'nome'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1406,17 +1412,17 @@ Disciplina: ['Métodos Computacionais', 'Microeconomia', 'Macroeconomia']</code>
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[57], line 13</span>
-<span class="ansi-green-fg ansi-bold">     10</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">f</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Disciplina: </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>alunos[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">disciplina</span><span style="color:rgb(175,0,0)">'</span>]<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg ansi-bold">     12</span> <span style="font-style:italic;color:rgb(95,135,135)"># Acessar um valor inexistente (gera um erro)</span>
-<span class="ansi-green-fg">---&gt; 13</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">f</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Nome: </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>alunos[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">cidade</span><span style="color:rgb(175,0,0)">'</span>]<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span style="color:rgb(175,0,0)">"</span>)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[57]</span><span class="ansi-green-fg">, line 13</span>
+<span class="ansi-green-fg">     10</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-fg">f</span><span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">Disciplina: </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>alunos[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">disciplina</span><span class="ansi-yellow-fg">'</span>]<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span class="ansi-yellow-fg">"</span>)
+<span class="ansi-green-fg">     12</span> <span style="font-style:italic;color:rgb(95,135,135)"># Acessar um valor inexistente (gera um erro)</span>
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">13</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-fg">f</span><span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">Nome: </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span><span class="ansi-yellow-bg">alunos</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-fg ansi-yellow-bg">cidade</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-bg">]</span><span style="font-weight:bold;color:rgb(175,95,135)">}</span><span class="ansi-yellow-fg">"</span>)
 
 <span class="ansi-red-fg">KeyError</span>: 'cidade'</pre>
 </div>
 </div>
 </div>
 <p>Para verificar se uma chave está presente em um dicionário, utilizamos o operador <code>in</code>. Por outro lado, para checar se uma chave <strong>não</strong> está presente, usamos o operador <code>not in</code>.</p>
-<div id="ffef8401" class="cell" data-execution_count="58">
+<div id="1a04d98d" class="cell" data-execution_count="58">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'nome'</span> <span class="kw">in</span> alunos)</span>
 <span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A chave 'nome' está presente? </span><span class="sc">{</span><span class="st">'nome'</span> <span class="kw">in</span> alunos<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1430,7 +1436,7 @@ A chave 'nome' não está presente? False</code></pre>
 </div>
 </div>
 <p>Para remover uma entrada (par chave-valor) de um dicionário, utilizamos a instrução <code>del</code> seguida do nome do dicionário e da chave entre colchetes. Se a chave não existir, será gerado um erro do tipo <code>KeyError</code>.</p>
-<div id="ab6a5e00" class="cell" data-execution_count="59">
+<div id="fe076fed" class="cell" data-execution_count="59">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remover uma entrada do dicionário</span></span>
 <span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> alunos[<span class="st">'disciplina'</span>]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1438,7 +1444,7 @@ A chave 'nome' não está presente? False</code></pre>
 <section id="métodos-de-dicionários" class="level4" data-number="3.4.8.2">
 <h4 data-number="3.4.8.2" class="anchored" data-anchor-id="métodos-de-dicionários"><span class="header-section-number">3.4.8.2</span> Métodos de Dicionários</h4>
 <p>Os dicionários possuem métodos eficientes para a manipulação e consulta de dados. Embora o acesso via colchetes (<code>dict[chave]</code>) seja o mais comum, ele interrompe a execução do código com um <code>KeyError</code> caso a chave não seja encontrada. Como alternativa mais robusta, o método <code>.get()</code> permite consultar chaves de forma segura, retornando um valor padrão (ou <code>None</code>) quando a chave está ausente, o que garante maior estabilidade à aplicação.</p>
-<div id="d484d206" class="cell" data-execution_count="60">
+<div id="a99cd4b9" class="cell" data-execution_count="60">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna o valor associado à chave ou valor padrão se a chave não existir</span></span>
 <span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Nome: </span><span class="sc">{</span>alunos<span class="sc">.</span>get(<span class="st">'nome'</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1452,7 +1458,7 @@ Cidade: Chave não encontrada</code></pre>
 </div>
 </div>
 <p>O método <code>.keys()</code> retorna uma visão das chaves do dicionário. O resultado é um objeto do tipo <code>dict_keys</code>, semelhante a uma lista, contendo todas as chaves presentes no dicionário.</p>
-<div id="0bd3a81f" class="cell" data-execution_count="61">
+<div id="4fd79ad9" class="cell" data-execution_count="61">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna uma visão das chaves do dicionário</span></span>
 <span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>chaves <span class="op">=</span> alunos.keys()</span>
 <span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chaves)</span>
@@ -1468,7 +1474,7 @@ Lista de chaves: ['nome', 'idade', 'curso']</code></pre>
 </div>
 </div>
 <p>O método <code>.values()</code> retorna uma visão dos valores armazenados no dicionário, ou seja, todos os dados associados às suas respectivas chaves. O resultado é um objeto do tipo <code>dict_values</code>, semelhante a uma lista, contendo os valores presentes no dicionário.</p>
-<div id="93c76685" class="cell" data-execution_count="62">
+<div id="a0ad516c" class="cell" data-execution_count="62">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna uma visão dos valores do dicionário</span></span>
 <span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> alunos.values()</span>
 <span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valores)</span>
@@ -1488,7 +1494,7 @@ Lista de valores: ['Arthur', 30, 'Economia']</code></pre>
 <li>O valor associado a essa chave como segundo elemento.</li>
 </ul>
 <p>Essa abordagem é útil para percorrer ou manipular pares chave-valor de forma eficiente, especialmente em operações de iteração e processamento de dados.</p>
-<div id="29ac4ea8" class="cell" data-execution_count="63">
+<div id="0df45dae" class="cell" data-execution_count="63">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna uma visão dos pares chave-valor do dicionário</span></span>
 <span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a>itens <span class="op">=</span> alunos.items()</span>
 <span id="cb117-3"><a href="#cb117-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(itens)</span>
@@ -1503,7 +1509,7 @@ Lista de itens: [('nome', 'Arthur'), ('idade', 30), ('curso', 'Economia')]</code
 </div>
 </div>
 <p>O método <code>.pop()</code> remove e retorna o valor da chave especificada:</p>
-<div id="f4240ead" class="cell" data-execution_count="64">
+<div id="fc5622a9" class="cell" data-execution_count="64">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionar um novo par chave-valor</span></span>
 <span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>alunos[<span class="st">'disciplina'</span>] <span class="op">=</span> <span class="st">"Métodos Computacionais"</span></span>
 <span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alunos)</span>
@@ -1518,7 +1524,7 @@ Lista de itens: [('nome', 'Arthur'), ('idade', 30), ('curso', 'Economia')]</code
 </div>
 </div>
 <p>O método <code>.update()</code> atualiza o dicionário, inserindo ou sobrescrevendo dados:</p>
-<div id="139703a4" class="cell" data-execution_count="65">
+<div id="5ffb85e3" class="cell" data-execution_count="65">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>alunos <span class="op">=</span> {</span>
 <span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nome'</span>: <span class="st">'Pedro'</span>,</span>
 <span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'idade'</span>: <span class="dv">20</span>,</span>
@@ -1544,7 +1550,7 @@ Lista de itens: [('nome', 'Arthur'), ('idade', 30), ('curso', 'Economia')]</code
 <section id="lista-de-dicionários" class="level4" data-number="3.4.8.3">
 <h4 data-number="3.4.8.3" class="anchored" data-anchor-id="lista-de-dicionários"><span class="header-section-number">3.4.8.3</span> Lista de Dicionários</h4>
 <p>Uma lista de dicionários é uma estrutura de dados robusta, ideal para representar coleções de registros de forma similar a uma tabela de banco de dados. Nesse modelo, a lista atua como a tabela e cada dicionário funciona como uma linha (ou tupla) de dados (ex: <code>[{'id': 1}, {'id': 2}]</code>). Embora ofereça a flexibilidade de chaves distintas em cada item, é comumente utilizada para organizar dados homogêneos. Abaixo, veremos como estruturar uma lista de estudantes, onde cada elemento armazena as informações de um aluno:</p>
-<div id="36ae93bd" class="cell" data-execution_count="66">
+<div id="b5e3994c" class="cell" data-execution_count="66">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando uma lista de dicionários</span></span>
 <span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a>estudantes <span class="op">=</span> [</span>
 <span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'nome'</span>: <span class="st">'Danilo'</span>, <span class="st">'idade'</span>: <span class="dv">20</span>, <span class="st">'curso'</span>: <span class="st">'Economia'</span>},</span>
@@ -1575,7 +1581,7 @@ Curso: Administração</code></pre>
 <h2 data-number="3.5" class="anchored" data-anchor-id="explorando-o-python"><span class="header-section-number">3.5</span> Explorando o Python</h2>
 <p>Programar não significa memorizar todos os métodos e funções da linguagem. Parte essencial do aprendizado é desenvolver autonomia para explorar e descobrir recursos por conta própria. Além da documentação oficial online, o próprio Python oferece ferramentas internas que permitem investigar objetos, tipos e funções diretamente no interpretador.</p>
 <p>A função <code>dir()</code> funciona como um mapa de possibilidades. Ela lista todos os atributos e métodos disponíveis para um objeto ou tipo de dado. Por exemplo, para descobrir o que pode ser feito com strings:</p>
-<div id="2682fd98" class="cell" data-execution_count="67">
+<div id="9af9fc9d" class="cell" data-execution_count="67">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(<span class="bu">str</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="67">
 <pre><code>['__add__',
@@ -1590,6 +1596,7 @@ Curso: Administração</code></pre>
  '__getattribute__',
  '__getitem__',
  '__getnewargs__',
+ '__getstate__',
  '__gt__',
  '__hash__',
  '__init__',
@@ -1662,14 +1669,14 @@ Curso: Administração</code></pre>
 </div>
 <p>Isso responde rapidamente à pergunta: “<em>Será que existe um método pronto para fazer isso?</em>”. Em vez de procurar manualmente na internet, você pode verificar diretamente no interpretador.</p>
 <p>Enquanto <code>dir()</code> mostra o que existe, a função <code>help()</code> explica como usar. Se você esquecer como funciona o método <code>strip()</code>, por exemplo:</p>
-<div id="197579bd" class="cell" data-execution_count="68">
+<div id="9ccbb5e5" class="cell" data-execution_count="68">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">str</span>.strip)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on method_descriptor:
 
-strip(self, chars=None, /)
+strip(self, chars=None, /) unbound builtins.str method
     Return a copy of the string with leading and trailing whitespace removed.
-    
+
     If chars is given and not None, remove characters in chars instead.
 </code></pre>
 </div>
